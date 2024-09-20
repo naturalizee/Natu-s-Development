@@ -1,0 +1,17 @@
+@import './variables.scss';
+
+h1 {
+    color: var(--h1);
+}
+
+h2 {
+    color: var(--h2);
+}
+
+h3 {
+    color: var(--h3);
+}
+
+p {
+    color: var(--text);
+}

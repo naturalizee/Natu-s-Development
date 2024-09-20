@@ -1,0 +1,30 @@
+@import './variables.scss';
+
+  main {
+    margin-top: 200px;
+  }
+
+.about, .skills, .projects {
+  position: relative;
+  background-color: transparent;
+  border-radius: var(--border);
+  padding: 50px;
+  box-shadow: var(--box);
+}
+
+.about::before, .skills::before, .projects::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background);
+  opacity: 40%;
+  border-radius: var(--border);
+  z-index: -1;
+}
+
+.description, .skills ul, .projects .project-cards {
+  z-index: 1;
+}

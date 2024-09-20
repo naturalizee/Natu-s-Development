@@ -1,0 +1,42 @@
+@import './variables.scss';
+
+.skills {
+  width: 80%;
+  margin: 50px auto;
+  background-color: var(--background);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.skills h2 {
+  font-size: 28px;
+  color: var(--accent);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.skills ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.skills li {
+  background-color: var(--secondary);
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.skills li:hover {
+  background-color: var(--primary);
+  transform: translateY(-5px);
+}
