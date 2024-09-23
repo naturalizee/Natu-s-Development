@@ -11,7 +11,7 @@ import ParticlesBackground from './components/particles/Particles-background.jsx
 import { Header, Footer } from './components/Layout.jsx';
 import { Skills } from './components/Skills.jsx';
 import { Projects } from './components/Projects.jsx';
-import { Contact } from './components/Contact.jsx';
+import ContactForm from './components/FormulaireContact.jsx';
 import useToggleTheme from './components/toggleTheme';
 
 const Portfolio = () => {
@@ -30,7 +30,7 @@ const Portfolio = () => {
         <div id='ancre-projets' />
         <Projects />
         <div id='ancre-contact' />
-        <Contact />
+        <ContactForm />
       </main>
       <Footer />
     </div>
