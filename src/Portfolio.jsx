@@ -21,9 +21,7 @@ const Portfolio = () => {
     <div className="portfolio">
       <ParticlesBackground theme={theme} />
       <div id='ancre-accueil' />
-      <header>
-        <Header theme={theme} toggleTheme={toggleTheme} />
-      </header>
+      <Header theme={theme} toggleTheme={toggleTheme} />
       <main>
         <div id='ancre-profil' />
         <About />
@@ -34,9 +32,7 @@ const Portfolio = () => {
         <div id='ancre-contact' />
         <Contact />
       </main>
-      <footer>
-        <Footer />
-      </footer>
+      <Footer />
     </div>
   );
 };

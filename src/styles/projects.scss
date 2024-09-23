@@ -17,23 +17,27 @@
 .slick-slider {
   position: relative;
 
+
   // Espacer les projets
   .slick-list {
-    padding: 0 20px;  // Espacer les projets à gauche et à droite
-  }
-  
-  .slick-track {
-    display: flex;
-    gap: 20px;  // Ajoute de l'espace entre les projets
+    padding: 0 auto; // Espacer les projets à gauche et à droite
+    overflow: hidden;
   }
 
-  .slick-prev, .slick-next {
+  .slick-track {
+    display: flex;
+    gap: 50px;
+    padding-top: 50px;
+  }
+
+  .slick-prev,
+  .slick-next {
     background-color: var(--secondary);
     color: white;
     border-radius: 50%;
     padding: 10px;
     position: absolute;
-    top: 50%;  // Positionner les flèches au milieu verticalement
+    top: 0;
     transform: translateY(-50%);
     cursor: pointer;
     z-index: 2;
@@ -42,13 +46,31 @@
       background-color: var(--primary);
     }
   }
+}
 
-  .slick-prev {
-    left: 10px;  // Ajuste la position à gauche
+.fa-circle-arrow-left,
+.fa-circle-arrow-right {
+  background-color: var(--secondary);
+  color: white;
+  border-radius: 50%;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 2;
+  font-size: 18px;
+
+  &:hover {
+    background-color: var(--primary);
   }
 
-  .slick-next {
-    right: 10px;  // Ajuste la position à droite
+  &.fa-circle-arrow-left {
+    left: 45%;
+  }
+
+  &.fa-circle-arrow-right {
+    right: 45%;
   }
 }
 
@@ -60,10 +82,11 @@
   transition: transform 0.3s ease, background-color 0.3s ease;
   position: relative;
   text-align: center;
-  min-height: 400px;  // Fixer une hauteur minimale
+  min-height: 400px; // Fixer une hauteur minimale
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  user-select: none;
 
   &:hover {
     background-color: var(--primary);
@@ -79,56 +102,56 @@
   h3 {
     margin-bottom: 10px;
   }
+}
 
-  .technologies {
-    margin-bottom: 15px;
+.technologies {
+  margin-bottom: 15px;
 
-    .tech-button {
-      background-color: var(--secondary);
-      border: none;
-      padding: 5px 10px;
-      border-radius: 5px;
-      margin-right: 5px;
-      color: white;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-
-      &:hover {
-        background-color: var(--primary);
-      }
-    }
-  }
-
-  .details {
-    margin-top: 15px;
-  }
-
-  .see-more {
-    background-color: var(--accent);
+  .tech-button {
+    background-color: var(--secondary);
     border: none;
     padding: 5px 10px;
     border-radius: 5px;
+    margin-right: 5px;
     color: white;
     cursor: pointer;
-    margin-top: 10px;
-  }
-
-  a {
-    display: inline-block;
-    margin-top: 15px;
-    color: var(--h2);
-    text-decoration: none;
-    font-weight: bold;
+    transition: background-color 0.3s ease;
 
     &:hover {
-      text-decoration: underline;
+      background-color: var(--primary);
     }
   }
+}
 
-  .status {
-    display: block;
-    margin-top: 10px;
-    color: var(--accent);
-    font-weight: bold;
+.details {
+  margin-top: 15px;
+}
+
+.see-more {
+  background-color: var(--accent);
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+a {
+  display: inline-block;
+  margin-top: 15px;
+  color: var(--h2);
+  text-decoration: none;
+  font-weight: bold;
+
+  &:hover {
+    text-decoration: underline;
   }
+}
+
+.status {
+  display: block;
+  margin-top: 10px;
+  color: var(--accent);
+  font-weight: bold;
 }

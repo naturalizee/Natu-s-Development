@@ -1,5 +1,9 @@
 @import './variables.scss';
 
+html, body {
+    max-width: 1920px;
+}
+
 h1 {
     color: var(--h1);
 }

@@ -100,7 +100,7 @@ const particlesConfigLight = {
     },
     retina_detect: true,
     background: {
-      color: "#f4f0ff", // Fond ecru pour maximiser le contraste
+      color: "#f4f0ff",
     },
   };
 
