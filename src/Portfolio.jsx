@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './styles/Particles.scss';
 import './styles/skills.scss';
 import './styles/projects.scss';
@@ -11,28 +11,33 @@ import ParticlesBackground from './components/particles/Particles-background.jsx
 import { Header, Footer } from './components/Layout.jsx';
 import { Skills } from './components/Skills.jsx';
 import { Projects } from './components/Projects.jsx';
-import ContactForm from './components/FormulaireContact.jsx';
+import ContactForm from './components/ContactForm.jsx';
 import useToggleTheme from './components/toggleTheme';
 
 const Portfolio = () => {
   const { theme, toggleTheme } = useToggleTheme();
+  const [language, setLanguage] = useState('fr');
+
+  const toggleLanguage = () => {
+    setLanguage((prevLanguage) => (prevLanguage === 'fr' ? 'en' : 'fr'));
+  };
 
   return (
     <div className="portfolio">
       <ParticlesBackground theme={theme} />
       <div id='ancre-accueil' />
-      <Header theme={theme} toggleTheme={toggleTheme} />
+      <Header theme={theme} toggleTheme={toggleTheme} language={language} toggleLanguage={toggleLanguage} />
       <main>
         <div id='ancre-profil' />
-        <About />
+        <About language={language} />
         <div id='ancre-competences' />
-        <Skills />
+        <Skills language={language} />
         <div id='ancre-projets' />
-        <Projects />
+        <Projects language={language} />
         <div id='ancre-contact' />
-        <ContactForm />
+        <ContactForm language={language} />
       </main>
-      <Footer />
+      <Footer language={language} />
     </div>
   );
 };

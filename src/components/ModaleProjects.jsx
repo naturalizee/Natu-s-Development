@@ -20,7 +20,7 @@ const PrevArrow = ({ onClick }) => {
     );
 };
 
-const ModaleProjects = ({ isOpen, project, onClose }) => {
+const ModaleProjects = ({ isOpen, project, onClose, language }) => {
     if (!isOpen || !project) return null;
 
     const settings = {
@@ -55,16 +55,17 @@ const ModaleProjects = ({ isOpen, project, onClose }) => {
                         ))}
                     </div>
 
-                    <p>{project.fields.Description}</p>
+                    {/* Affichage des descriptions et objectifs en fonction de la langue */}
+                    <p>{language === 'fr' ? project.fields['Description'] : project.fields['Description (EN)']}</p>
 
                     <ul className="objectives">
-                        {project.fields.Objectifs?.map((objective, index) => (
+                        {project.fields[language === 'fr' ? 'Objectifs' : 'Objectifs (EN)']?.map((objective, index) => (
                             <li key={index}>{objective}</li>
                         ))}
                     </ul>
 
                     <a href={project.fields['Lien du projet']} target="_blank" rel="noopener noreferrer">
-                        Voir le projet
+                        {language === 'fr' ? 'Voir le projet' : 'See the project'}
                     </a>
                 </div>
             </div>

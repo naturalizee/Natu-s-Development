@@ -1,9 +1,9 @@
 import React from "react";
 
-export function Skills() {
+export function Skills({ language }) {
     return (
         <section className="skills">
-            <h2>Compétences</h2>
+            <h2>{language === 'fr' ? 'Compétences' : 'Skills'}</h2>
             <ul>
                 <li>HTML/CSS</li>
                 <li>JavaScript</li>

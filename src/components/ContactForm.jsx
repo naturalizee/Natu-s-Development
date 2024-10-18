@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import '../styles/formContact.scss';
 
-const ContactForm = () => {
+const ContactForm = ({ language }) => {
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -13,14 +13,13 @@ const ContactForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setError(""); // Réinitialiser les erreurs
+        setError(""); 
 
         if (!formData.name || !formData.email || !formData.message) {
-            setError("Tous les champs sont obligatoires.");
+            setError(language === 'fr' ? "Tous les champs sont obligatoires." : "All fields are required.");
             return;
         }
 
-        // Envoi des données à EmailJS
         emailjs
             .send(
                 process.env.REACT_APP_EMAILJS_SERVICE_ID,
@@ -31,7 +30,7 @@ const ContactForm = () => {
             .then(
                 (result) => {
                     setEmailSent(true);
-                    alert("Votre message a été envoyé avec succès !");
+                    alert(language === 'fr' ? "Votre message a été envoyé avec succès !" : "Your message was sent successfully!");
                     setFormData({
                         name: "",
                         email: "",
@@ -39,17 +38,17 @@ const ContactForm = () => {
                     });
                 },
                 (error) => {
-                    setError("Une erreur est survenue lors de l'envoi du message.");
+                    setError(language === 'fr' ? "Une erreur est survenue lors de l'envoi du message." : "An error occurred while sending the message.");
                 }
             );
     };
 
     return (
         <div className="contact">
-            <h2>Contact</h2>
+            <h2>{language === 'fr' ? 'Contact' : 'Contact'}</h2>
             <form className="contact-form" onSubmit={handleSubmit}>
                 <div>
-                    <label>Nom:</label>
+                    <label>{language === 'fr' ? 'Nom:' : 'Name:'}</label>
                     <input
                         type="text"
                         name="name"
@@ -59,7 +58,7 @@ const ContactForm = () => {
                 </div>
 
                 <div>
-                    <label>Email:</label>
+                    <label>{language === 'fr' ? 'Email:' : 'Email:'}</label>
                     <input
                         type="email"
                         name="email"
@@ -69,7 +68,7 @@ const ContactForm = () => {
                 </div>
 
                 <div>
-                    <label>Message:</label>
+                    <label>{language === 'fr' ? 'Message:' : 'Message:'}</label>
                     <textarea
                         name="message"
                         value={formData.message}
@@ -79,9 +78,9 @@ const ContactForm = () => {
 
                 {error && <p style={{ color: "red" }}>{error}</p>}
 
-                <button type="submit">Envoyer</button>
+                <button type="submit">{language === 'fr' ? 'Envoyer' : 'Send'}</button>
 
-                {emailSent && <p style={{ color: "green" }}>Email envoyé avec succès !</p>}
+                {emailSent && <p style={{ color: "green" }}>{language === 'fr' ? 'Email envoyé avec succès !' : 'Email sent successfully!'}</p>}
             </form>
         </div>
     );

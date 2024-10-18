@@ -1,27 +1,22 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Slider from "react-slick";  // Importer React Slick
+import Slider from "react-slick";  
 import '../styles/projects.scss';
-import ModaleProjects from './ModaleProjects';  // Importer la modale
+import ModaleProjects from './ModaleProjects'; 
 
-// Composants flèches personnalisées
-const NextArrow = ({ onClick }) => {
-    return (
-        <div className="nextArrow" onClick={onClick}>
-            <i className="fa-solid fa-circle-arrow-right"></i>
-        </div>
-    );
-};
+const NextArrow = ({ onClick }) => (
+    <div className="nextArrow" onClick={onClick}>
+        <i className="fa-solid fa-circle-arrow-right"></i>
+    </div>
+);
 
-const PrevArrow = ({ onClick }) => {
-    return (
-        <div className="prevArrow" onClick={onClick}>
-            <i className="fa-solid fa-circle-arrow-left"></i>
-        </div>
-    );
-};
+const PrevArrow = ({ onClick }) => (
+    <div className="prevArrow" onClick={onClick}>
+        <i className="fa-solid fa-circle-arrow-left"></i>
+    </div>
+);
 
-export function Projects() {
+export function Projects({ language }) {
     const [projects, setProjects] = useState([]);
     const [isModaleOpen, setIsModaleOpen] = useState(false);
     const [currentProject, setCurrentProject] = useState(null);
@@ -39,13 +34,12 @@ export function Projects() {
                 );
                 setProjects(response.data.records);
             } catch (error) {
-                console.error("Erreur lors de la récupération des projets : ", error);
+                console.error(language === 'fr' ? "Erreur lors de la récupération des projets" : "Error fetching projects", error);
             }
         };
         fetchProjects();
-    }, []);
+    }, [language]);
 
-    // Paramètres du carrousel
     const settings = {
         dots: false,
         infinite: true,
@@ -60,7 +54,6 @@ export function Projects() {
         prevArrow: <PrevArrow />, 
     };
 
-    // Ouvrir la modale avec les données du projet sélectionné
     const openModale = (project) => {
         setCurrentProject(project);
         setIsModaleOpen(true);
@@ -73,18 +66,21 @@ export function Projects() {
 
     return (
         <section className="projects">
-            <h2>Projets</h2>
+            <h2>{language === 'fr' ? 'Projets' : 'Projects'}</h2>
             <Slider {...settings}>
                 {projects.map((project) => (
                     <div className="project-card" key={project.id}>
                         <img
                             src={project.fields['Image de couverture']?.[0]?.url}
-                            alt="Image-de-couverture"
+                            alt={language === 'fr' ? 'Image de couverture' : 'Cover image'}
                             className="cover-image"
                         />
-                
-                        <h3>{project.fields['Nom du projet']}</h3>
-                
+
+                        {/* Utilisation des colonnes spécifiques à chaque langue */}
+                        <h3>{language === 'fr' ? project.fields['Nom du projet'] : project.fields['Nom du projet (EN)']}</h3>
+
+                        <p>{language === 'fr' ? project.fields['Description'] : project.fields['Description (EN)']}</p>
+
                         <div className="technologies">
                             {project.fields.Technologies?.map((tech) => (
                                 <button key={tech} className="tech-button">{tech}</button>
@@ -92,27 +88,22 @@ export function Projects() {
                         </div>
 
                         <button className="see-more" onClick={() => openModale(project)}>
-                            En savoir plus
+                            {language === 'fr' ? 'En savoir plus' : 'See more'}
                         </button>
 
-                        {/* <a href={project.fields['Lien du projet']} target="_blank" rel="noopener noreferrer">
-                            Voir le projet
-                        </a> */}
-
                         {project.fields.Statut === 'En cours' && (
-                            <span className="status"><i className="fa-solid fa-spinner"></i> <br />Projet en cours de développement</span>
+                            <span className="status"><i className="fa-solid fa-spinner"></i> <br />{language === 'fr' ? 'Projet en cours de développement' : 'Project in progress'}</span>
                         )}
                     </div>
                 ))}
             </Slider>
 
-            {/* Passer les informations du projet à la modale */}
             <ModaleProjects 
                 isOpen={isModaleOpen} 
                 project={currentProject} 
                 onClose={closeModale} 
+                language={language}
             />
         </section>
     );
 }
-
