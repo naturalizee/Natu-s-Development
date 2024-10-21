@@ -9,15 +9,16 @@
     background-color: transparent;
     position: relative;
     border-radius: var(--border);
-}
 
-.about::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 30px;
+        padding: 30px;
+    }
+
+    @media (max-width: 480px) {
+        padding: 20px;
+    }
 }
 
 .profile-pic {
@@ -27,18 +28,37 @@
     object-fit: cover;
     border: 5px solid var(--primary);
     z-index: 1;
+
+    @media (max-width: 768px) {
+        width: 200px;
+        height: 200px;
+    }
+
+    @media (max-width: 480px) {
+        width: 150px;
+        height: 150px;
+    }
 }
 
 .description {
     flex: 1;
     z-index: 1;
-}
 
-.description h2 {
-    margin-bottom: 20px;
-}
+    h2 {
+        margin-bottom: 20px;
+        font-size: 2rem;
 
-.description p {
-    line-height: 1.6;
+        @media (max-width: 480px) {
+            font-size: 1.5rem;
+        }
+    }
+
+    p {
+        line-height: 1.6;
+        font-size: 1rem;
+
+        @media (max-width: 480px) {
+            font-size: 0.875rem;
+        }
+    }
 }
-  

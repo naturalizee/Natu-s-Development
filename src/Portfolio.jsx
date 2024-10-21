@@ -11,6 +11,7 @@ import ParticlesBackground from './components/particles/Particles-background.jsx
 import { Header, Footer } from './components/Layout.jsx';
 import { Skills } from './components/Skills.jsx';
 import { Projects } from './components/Projects.jsx';
+import { Introduction } from './components/Introduction.jsx';
 import ContactForm from './components/ContactForm.jsx';
 import useToggleTheme from './components/toggleTheme';
 
@@ -28,6 +29,7 @@ const Portfolio = () => {
       <div id='ancre-accueil' />
       <Header theme={theme} toggleTheme={toggleTheme} language={language} toggleLanguage={toggleLanguage} />
       <main>
+        <Introduction langugage={language} />
         <div id='ancre-profil' />
         <About language={language} />
         <div id='ancre-competences' />
