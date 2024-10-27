@@ -1,40 +1,71 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
-import '../styles/formContact.scss';
+import '../styles/contactForm.scss';
 
+/* ContactForm configurations */
 const ContactForm = ({ language }) => {
     const [formData, setFormData] = useState({
         name: "",
         email: "",
         message: "",
+        honeypot: "" // Champ caché pour l'anti-bot
     });
     const [emailSent, setEmailSent] = useState(false);
     const [error, setError] = useState("");
 
+    /* HoneyPot and required fields verification */
     const handleSubmit = (e) => {
         e.preventDefault();
-        setError(""); 
+        setError("");
+
+   
+        if (formData.honeypot) {
+            console.log("Bot detected - form not submitted");
+            return; 
+        }
 
         if (!formData.name || !formData.email || !formData.message) {
             setError(language === 'fr' ? "Tous les champs sont obligatoires." : "All fields are required.");
             return;
         }
 
+        // Message send to client
         emailjs
             .send(
                 process.env.REACT_APP_EMAILJS_SERVICE_ID,
                 process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-                formData,
+                {
+                    name: formData.name,
+                    email: formData.email,
+                    message: formData.message,
+                    reply_to: formData.email 
+                },
                 process.env.REACT_APP_EMAILJS_USER_ID
             )
             .then(
                 (result) => {
-                    setEmailSent(true);
-                    alert(language === 'fr' ? "Votre message a été envoyé avec succès !" : "Your message was sent successfully!");
-                    setFormData({
-                        name: "",
-                        email: "",
-                        message: "",
+                    // Auto-reply send
+                    emailjs.send(
+                        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+                        process.env.REACT_APP_EMAILJS_REPLY_TEMPLATE_ID,
+                        {
+                            name: formData.name,
+                            email: formData.email,
+                            reply_to: formData.email
+                        },
+                        process.env.REACT_APP_EMAILJS_USER_ID
+                    ).then(() => {
+                        /* Emptying fields */
+                        setEmailSent(true);
+                        alert(language === 'fr' ? "Votre message a été envoyé avec succès !" : "Your message was sent successfully!");
+                        setFormData({
+                            name: "",
+                            email: "",
+                            message: "",
+                            honeypot: "" 
+                        });
+                    }).catch((error) => {
+                        setError(language === 'fr' ? "Erreur lors de l'envoi de la réponse automatique." : "Error sending auto-reply.");
                     });
                 },
                 (error) => {
@@ -47,6 +78,18 @@ const ContactForm = ({ language }) => {
         <div className="contact">
             <h2>{language === 'fr' ? 'Contact' : 'Contact'}</h2>
             <form className="contact-form" onSubmit={handleSubmit}>
+                
+                {/* HoneyPot field*/}
+                <div style={{ display: 'none' }}>
+                    <label>Leave this field blank</label>
+                    <input
+                        type="text"
+                        name="honeypot"
+                        value={formData.honeypot}
+                        onChange={(e) => setFormData({ ...formData, honeypot: e.target.value })}
+                    />
+                </div>
+
                 <div>
                     <label>{language === 'fr' ? 'Nom:' : 'Name:'}</label>
                     <input

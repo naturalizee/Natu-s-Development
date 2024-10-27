@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import './styles/Particles.scss';
-import './styles/skills.scss';
-import './styles/projects.scss';
-import './styles/Layout.scss';
-import './styles/about.scss';
-import './styles/portfolio.scss';
+
+/* CSS styles generals */
 import './styles/general.scss';
+import './styles/portfolio.scss';
+import './styles/Particles.scss';
+
+/* Components for react app */
 import { About } from './components/About.jsx';
 import ParticlesBackground from './components/particles/Particles-background.jsx';
 import { Header, Footer } from './components/Layout.jsx';
@@ -16,27 +16,30 @@ import ContactForm from './components/ContactForm.jsx';
 import useToggleTheme from './components/toggleTheme';
 
 const Portfolio = () => {
+  /* Theme and language controls */
   const { theme, toggleTheme } = useToggleTheme();
   const [language, setLanguage] = useState('fr');
 
   const toggleLanguage = () => {
+    /* French language in default */
     setLanguage((prevLanguage) => (prevLanguage === 'fr' ? 'en' : 'fr'));
   };
 
   return (
     <div className="portfolio">
       <ParticlesBackground theme={theme} />
-      <div id='ancre-accueil' />
-      <Header theme={theme} toggleTheme={toggleTheme} language={language} toggleLanguage={toggleLanguage} />
+      <div id='home-anchor' />
+      <Header theme={theme} toggleTheme={toggleTheme}
+        language={language} toggleLanguage={toggleLanguage} />
       <main>
-        <Introduction langugage={language} />
-        <div id='ancre-profil' />
+        <Introduction language={language} />
+        <div id='profil-anchor' />
         <About language={language} />
-        <div id='ancre-competences' />
+        <div id='skills-anchor' />
         <Skills language={language} />
-        <div id='ancre-projets' />
+        <div id='projects-anchor' />
         <Projects language={language} />
-        <div id='ancre-contact' />
+        <div id='contact-anchor' />
         <ContactForm language={language} />
       </main>
       <Footer language={language} />

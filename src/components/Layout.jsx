@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import avatar from '../images/avatar_natu.webp';
+import '../styles/Layout.scss';
 
 export function Header({ toggleTheme, theme, language, toggleLanguage }) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,25 +25,20 @@ export function Header({ toggleTheme, theme, language, toggleLanguage }) {
 
     return (
         <header>
-            <div className="titleAndAvatar">
+            <div className="titleAndAvatar" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
                 <img src={avatar} alt='Avatar' className='pictHeader' />
                 <h1>{language === 'fr' ? 'Alizée Dereppe' : 'Alizée Dereppe'} <span>{language === 'fr' ? 'Développeuse web' : 'Web Developer'}</span></h1>
             </div>
-            <div className={`nav-and-controls ${isMenuOpen ? 'open' : ''}`}>
-                <ul className="nav">
-                    <li><button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>{language === 'fr' ? 'Accueil' : 'Home'}</button></li>
-                    <li><button onClick={() => scrollToSection('ancre-profil')}>{language === 'fr' ? 'Profil' : 'Profile'}</button></li>
-                    <li><button onClick={() => scrollToSection('ancre-competences')}>{language === 'fr' ? 'Compétences' : 'Skills'}</button></li>
-                    <li><button onClick={() => scrollToSection('ancre-projets')}>{language === 'fr' ? 'Projets' : 'Projects'}</button></li>
-                    <li><button className="contact-button" onClick={() => scrollToSection('ancre-contact')}>{language === 'fr' ? 'Contact' : 'Contact'}</button></li>
-                </ul>
-                <div className="controls">
-                    <button className="languageButton" onClick={toggleLanguage}>{language === 'fr' ? 'EN' : 'FR'}</button>
-                    <button onClick={toggleTheme} className="theme-toggle-button">
-                        {theme === 'light' ? <i className="fa-solid fa-moon"></i> : <i className="fa-solid fa-sun"></i>}
-                    </button>
-                </div>
-            </div>
+            <ul className={`nav ${isMenuOpen ? 'open' : ''}`}>
+                <li><button onClick={() => scrollToSection('profil-anchor')}>{language === 'fr' ? 'Profil' : 'Profile'}</button></li>
+                <li><button onClick={() => scrollToSection('skills-anchor')}>{language === 'fr' ? 'Compétences' : 'Skills'}</button></li>
+                <li><button onClick={() => scrollToSection('projects-anchor')}>{language === 'fr' ? 'Projets' : 'Projects'}</button></li>
+                <li><button className="contact-button" onClick={() => scrollToSection('contact-anchor')}>{language === 'fr' ? 'Contact' : 'Contact'}</button></li>
+                <li><button className="languageButton" onClick={toggleLanguage}>{language === 'fr' ? 'EN' : 'FR'}</button></li>
+                <li><button onClick={toggleTheme} className="theme-toggle-button">
+                    {theme === 'light' ? <i className="fa-solid fa-moon"></i> : <i className="fa-solid fa-sun"></i>}
+                </button></li>
+            </ul>
             <button className="hamburger" onClick={toggleMenu}>
                 <span className="bar"></span>
                 <span className="bar"></span>
@@ -62,5 +58,14 @@ export function Footer({ language }) {
 }
 
 const scrollToSection = (id) => {
-    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    const element = document.getElementById(id);
+    if (element) {
+        const offset = -120; 
+        const y = element.getBoundingClientRect().top + window.scrollY + offset;
+
+        window.scrollTo({
+            top: y,
+            behavior: 'smooth'
+        });
+    }
 };
