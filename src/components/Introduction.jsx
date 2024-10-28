@@ -1,4 +1,5 @@
 import React from "react";
+import '../styles/introduction.scss'
 
 export function Introduction({ language }) {
     return (

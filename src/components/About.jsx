@@ -9,9 +9,9 @@ export function About({ language }) {
         <section className="about">
             <img src={portrait} alt={language === 'fr' ? 'Portrait de moi'
                 : 'My portrait'} className="profile-pic" />
+            <h2>{language === 'fr' ? 'À Propos de moi'
+                : 'About Me'}</h2>
             <div className="description">
-                <h2>{language === 'fr' ? 'À Propos de moi'
-                    : 'About Me'}</h2>
                 <p>
                     {language === 'fr'
                         ? `Moi, c'est Alizée. Je suis née en 1998, j'habite en Eure-et-Loir et je suis maman d'un petit garçon. <br />
