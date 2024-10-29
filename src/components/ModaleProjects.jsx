@@ -32,7 +32,7 @@ const ModaleProjects = ({ isOpen, project, onClose, language }) => {
         arrows: true,
         prevArrow: <PrevArrow />,
         nextArrow: <NextArrow />,
-    };
+    }
 
     return (
         <div className="modale" onClick={(e) => e.target.classList.contains('modale') && onClose()}>

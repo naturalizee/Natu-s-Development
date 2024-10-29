@@ -13,6 +13,7 @@
     "i18next-browser-languagedetector": "^8.0.0",
     "i18next-http-backend": "^2.6.2",
     "react": "^18.3.1",
+    "react-app-rewired": "^2.2.1",
     "react-dom": "^18.3.1",
     "react-i18next": "^15.0.3",
     "react-router-dom": "^6.26.2",
@@ -30,7 +31,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start --ignore-warnings='Failed to parse source map'",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

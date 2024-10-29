@@ -11,6 +11,8 @@
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    overflow: hidden;
+}
 
 .modale-content {
     background-color: var(--background);
@@ -20,7 +22,13 @@
     height: 90vh;
     width: 90%;
     position: relative;
-    overflow-y: auto;
+    overflow: hidden;
+
+    @media (max-width: 768px) {
+        max-width: 80%; // Réduisez la largeur pour s'adapter aux petits écrans
+        height: 80vh;    // Ajustez la hauteur automatiquement
+        overflow-y: auto;
+    }
 }
 
 .close-button {
@@ -35,10 +43,19 @@
 
 .modale-image {
     height: 50vh;
-    max-width: 100%;
-    display: block;
+    width: auto;
     margin: 0 auto;
     object-fit: contain;
+    display: block;
+    justify-content: center;
+    padding: 0;
+    border-radius: 30px;
+    border: 5px solid var(--primary);
+
+    @media (max-width: 768px) {
+        width: auto;
+        height: 50px;
+    }
 }
 
 .image-info {
@@ -59,5 +76,4 @@
 
 p {
     padding: 20px;
-}
 }

@@ -91,7 +91,7 @@ const ContactForm = ({ language }) => {
                 </div>
 
                 <div>
-                    <label>{language === 'fr' ? 'Nom:' : 'Name:'}</label>
+                    <label>{language === 'fr' ? 'Nom' : 'Name'}</label>
                     <input
                         type="text"
                         name="name"
@@ -101,7 +101,7 @@ const ContactForm = ({ language }) => {
                 </div>
 
                 <div>
-                    <label>{language === 'fr' ? 'Email:' : 'Email:'}</label>
+                    <label>{language === 'fr' ? 'Email' : 'Email'}</label>
                     <input
                         type="email"
                         name="email"
@@ -111,7 +111,7 @@ const ContactForm = ({ language }) => {
                 </div>
 
                 <div>
-                    <label>{language === 'fr' ? 'Message:' : 'Message:'}</label>
+                    <label>{language === 'fr' ? 'Message' : 'Message'}</label>
                     <textarea
                         name="message"
                         value={formData.message}
