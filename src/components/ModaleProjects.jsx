@@ -34,6 +34,7 @@ const ModaleProjects = ({ isOpen, project, onClose, language }) => {
         nextArrow: <NextArrow />,
     }
 
+
     return (
         <div className="modale" onClick={(e) => e.target.classList.contains('modale') && onClose()}>
             <div className="modale-content">
@@ -41,6 +42,7 @@ const ModaleProjects = ({ isOpen, project, onClose, language }) => {
 
                 <Slider {...settings}>
                     {project.fields['Images supplémentaires']?.map((image, index) => (
+                        
                         <div key={index}>
                             <img src={image.url} alt={`Slide ${index}`} className="modale-image" />
                         </div>
