@@ -90,23 +90,6 @@ header {
       }
     }
 
-    button {
-      padding: 10px 20px;
-      background-color: var(--primary);
-      color: var(--text);
-      font-weight: bold;
-      border-radius: 25px;
-      border: 2px solid var(--accent);
-      transition: background-color 0.3s ease;
-      box-shadow: var(--box);
-      cursor: pointer;
-
-      &:hover {
-        background-color: var(--accent);
-        color: #fff;
-      }
-    }
-
     .languageButton, .theme-toggle-button {
       @media (max-width: 1024px) {
         position: absolute;
@@ -152,6 +135,19 @@ header {
 
 footer {
   text-align: center;
+  background: var(--hamburger_background);
+  filter: brightness(1.15);
+  width: 100%;
+  padding: 10px;
+  z-index: 10;
+
+  p {
+    padding: 0;
+  }
+
+  button {
+    margin: 0 10px;
+  }
 }
 
 .modal-overlay {
@@ -186,4 +182,21 @@ footer {
   border: none;
   font-size: 20px;
   cursor: pointer;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: var(--primary);
+  color: var(--text);
+  font-weight: bold;
+  border-radius: 25px;
+  border: 2px solid var(--accent);
+  transition: background-color 0.3s ease;
+  box-shadow: var(--box);
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--accent);
+    color: #fff;
+  }
 }

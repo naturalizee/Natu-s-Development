@@ -58,7 +58,7 @@ export function Footer({ language }) {
 
     return (
         <footer>
-            <p>{language === 'fr' ? '© 2024 Mon Portfolio' : '© 2024 My Portfolio'}</p>
+            <p>{language === 'fr' ? '© 2024 Natu\'s Development' : '© 2024 Natu\'s Development'}</p>
             <nav>
                 <button onClick={() => setShowLegalNotice(true)}>
                     {language === 'fr' ? 'Mentions Légales' : 'Legal Notice'}
