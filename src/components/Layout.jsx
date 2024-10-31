@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { LegalNotice } from "./LegalNotice";
+import { PrivacyDataProtection } from "./PrivacyDataProtection";
 import avatar from '../images/avatar_natu.webp';
 import '../styles/Layout.scss';
 
@@ -50,9 +52,41 @@ export function Header({ toggleTheme, theme, language, toggleLanguage }) {
 
 
 export function Footer({ language }) {
+    // États pour contrôler l'affichage des modales
+    const [showLegalNotice, setShowLegalNotice] = useState(false);
+    const [showPrivacyPolicy, setShowPrivacyPolicy] = useState(false);
+
     return (
         <footer>
             <p>{language === 'fr' ? '© 2024 Mon Portfolio' : '© 2024 My Portfolio'}</p>
+            <nav>
+                <button onClick={() => setShowLegalNotice(true)}>
+                    {language === 'fr' ? 'Mentions Légales' : 'Legal Notice'}
+                </button>
+                <button onClick={() => setShowPrivacyPolicy(true)}>
+                    {language === 'fr' ? 'Protection des Données' : 'Data Protection'}
+                </button>
+            </nav>
+
+            {/* Modale pour les mentions légales */}
+            {showLegalNotice && (
+                <div className="modal-overlay" onClick={() => setShowLegalNotice(false)}>
+                    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+                        <button className="close-button" onClick={() => setShowLegalNotice(false)}>X</button>
+                        <LegalNotice language={language} />
+                    </div>
+                </div>
+            )}
+
+            {/* Modale pour la protection des données */}
+            {showPrivacyPolicy && (
+                <div className="modal-overlay" onClick={() => setShowPrivacyPolicy(false)}>
+                    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+                        <button className="close-button" onClick={() => setShowPrivacyPolicy(false)}>X</button>
+                        <PrivacyDataProtection language={language} />
+                    </div>
+                </div>
+            )}
         </footer>
     );
 }
