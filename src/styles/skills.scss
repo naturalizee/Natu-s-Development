@@ -15,7 +15,6 @@
 
     @media (max-width: 480px) {
         padding: 20px;
-        width: 95%;
     }
 
     h2 {
@@ -31,7 +30,7 @@
         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
 
         @media (max-width: 480px) {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 10px;
         }
     }
@@ -45,6 +44,8 @@
         font-weight: bold;
         box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s ease, background-color 0.3s ease;
+        display: flex;
+        flex-direction: column;
 
         &:hover {
             background-color: var(--primary);
@@ -56,9 +57,10 @@
         }
     }
     .skill-icon {
-        width: 80%;
+        width: 50%;
         height: auto;
-        margin-right: 8px;
+        margin: auto;
+        padding: 10px 0;
     }
     
 }

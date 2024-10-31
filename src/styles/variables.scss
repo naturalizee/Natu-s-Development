@@ -1,11 +1,13 @@
 :root[data-theme="light"] {
   --h1: #133a90;
   --h2: #c17871;
+  --h3: #133a90;
+  --h4: #133a90;
+  --h5: #c17871;
   --text: #0a0029;
   --background: #f4f0ff;
   --primary: #c1b5d0;
   --secondary: #8896b5;
-  --h3: #133a90;
   --fourth: #eddfe4;
   --accent: #c17871;
   --box: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -19,6 +21,8 @@
   --h1: #f4f0ff;
   --h2: #8e453e;
   --h3: #f4f0ff;
+  --h4: #f4f0ff;
+  --h5: #8e453e;
   --text: #e0d6ff;
   --background: #1b1b2f;
   --primary: #423960;
@@ -29,6 +33,7 @@
   --box: 0px 4px 8px rgba(0, 0, 0, 0.1);
   --border: 15px;
   --header_background: linear-gradient(to bottom, #423960, #1b1b2f);
+  --hamburger_background: linear-gradient(to top, #423960, #1b1b2f);
 }
 
 @import url('https://fonts.googleapis.com/css?family=Oxanium:700|Vollkorn:400');

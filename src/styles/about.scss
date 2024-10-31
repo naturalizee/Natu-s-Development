@@ -6,13 +6,14 @@
     grid-template-columns: 30% 1fr;
     grid-template-rows: 0.5fr 1fr;
     gap: 0px 0px;
-    width: 80%;
+    width: 85%;
     margin: auto;
-    padding: 40px;
 
     @media (max-width: 1024px) {
         display: flex;
         flex-direction: column;
+        width: 95%;
+        margin: auto;
     }
 
     .profile-pic {
@@ -44,6 +45,7 @@
 
         @media (max-width: 1024px) {
             padding-left: 0;
+            width: 90%;
         }
     }
 }

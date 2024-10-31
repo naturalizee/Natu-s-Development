@@ -23,12 +23,14 @@ const PrevArrow = ({ onClick }) => {
 const ModaleProjects = ({ isOpen, project, onClose, language }) => {
     if (!isOpen || !project) return null;
 
+    const isMobile = window.innerWidth <= 768;
     const settings = {
         dots: false,
         infinite: true,
         speed: 500,
-        slidesToShow: 1,
+        slidesToShow: isMobile ? 1 : 1,
         slidesToScroll: 1,
+        centerMode: false,
         arrows: true,
         prevArrow: <PrevArrow />,
         nextArrow: <NextArrow />,
@@ -36,43 +38,36 @@ const ModaleProjects = ({ isOpen, project, onClose, language }) => {
 
 
     return (
-        <div className="modale" onClick={(e) => e.target.classList.contains('modale') && onClose()}>
-            <div className="modale-content">
-                <button className="close-button" onClick={onClose}>X</button>
-
-                <Slider {...settings}>
-                    {project.fields['Images supplémentaires']?.map((image, index) => (
-                        
-                        <div key={index}>
-                            <img src={image.url} alt={`Slide ${index}`} className="modale-image" />
+            <div className="modale-overlay" onClick={onClose}>
+                <div className="modale-content" onClick={(e) => e.stopPropagation()}>
+                    <button className="close-button" onClick={onClose}>X</button>
+                    <Slider {...settings}>
+                        {project.fields['Images supplémentaires']?.map((image, index) => (
+                            <div key={index}>
+                                <img src={image.url} alt={`Slide ${index}`} className="modale-image" />
+                            </div>
+                        ))}
+                    </Slider>
+                    {/* Informations du projet sous l'image */}
+                    <div className="image-info">
+                        <div className="technologies">
+                            {project.fields.Technologies?.map((tech) => (
+                                <button key={tech} className="tech-button">{tech}</button>
+                            ))}
                         </div>
-                    ))}
-                </Slider>
-
-                {/* Informations du projet sous l'image */}
-                <div className="image-info">
-                    <div className="technologies">
-                        {project.fields.Technologies?.map((tech) => (
-                            <button key={tech} className="tech-button">{tech}</button>
-                        ))}
+                        <p>{language === 'fr' ? project.fields['Description'] : project.fields['Description (EN)']}</p>
+                        <ul className="objectives">
+                            {project.fields[language === 'fr' ? 'Objectifs' : 'Objectifs (EN)']?.map((objective, index) => (
+                                <li key={index}>{objective}</li>
+                            ))}
+                        </ul>
+                        <a href={project.fields['Lien du projet']} target="_blank" rel="noopener noreferrer">
+                            {language === 'fr' ? 'Voir le projet' : 'See the project'}
+                        </a>
                     </div>
-
-                    {/* Affichage des descriptions et objectifs en fonction de la langue */}
-                    <p>{language === 'fr' ? project.fields['Description'] : project.fields['Description (EN)']}</p>
-
-                    <ul className="objectives">
-                        {project.fields[language === 'fr' ? 'Objectifs' : 'Objectifs (EN)']?.map((objective, index) => (
-                            <li key={index}>{objective}</li>
-                        ))}
-                    </ul>
-
-                    <a href={project.fields['Lien du projet']} target="_blank" rel="noopener noreferrer">
-                        {language === 'fr' ? 'Voir le projet' : 'See the project'}
-                    </a>
                 </div>
             </div>
-        </div>
-    );
+        );
 };
 
 export default ModaleProjects;
