@@ -28,7 +28,7 @@ export function Header({ toggleTheme, theme, language, toggleLanguage }) {
     return (
         <header>
             <div className="titleAndAvatar" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-                <img src={avatar} alt='Avatar' className='pictHeader' />
+                <img src={avatar} alt='Avatar Alizée Dereppe' className='pictHeader' />
                 <h1>{language === 'fr' ? 'Alizée Dereppe' : 'Alizée Dereppe'} <span>{language === 'fr' ? 'Développeuse web' : 'Web Developer'}</span></h1>
             </div>
             <ul className={`nav ${isMenuOpen ? 'open' : ''}`}>
@@ -57,44 +57,48 @@ export function Footer({ language }) {
     const [showPrivacyPolicy, setShowPrivacyPolicy] = useState(false);
 
     return (
-        <footer>
-            <p>{language === 'fr' ? '© 2024 Natu\'s Development' : '© 2024 Natu\'s Development'}</p>
-            <nav>
-                <button onClick={() => setShowLegalNotice(true)}>
-                    {language === 'fr' ? 'Mentions Légales' : 'Legal Notice'}
-                </button>
-                <button onClick={() => setShowPrivacyPolicy(true)}>
-                    {language === 'fr' ? 'Protection des Données' : 'Data Protection'}
-                </button>
-            </nav>
+        <>
+            <footer>
+                <p>{language === 'fr' ? '© 2024 Natu\'s Development' : '© 2024 Natu\'s Development'}</p>
+                <nav>
+                    <button onClick={() => setShowLegalNotice(true)}>
+                        {language === 'fr' ? 'Mentions Légales' : 'Legal Notice'}
+                    </button>
+                    <button onClick={() => setShowPrivacyPolicy(true)}>
+                        {language === 'fr' ? 'Protection des Données' : 'Data Protection'}
+                    </button>
+                </nav>
+            </footer>
 
-            {/* Modale pour les mentions légales */}
-            {showLegalNotice && (
-                <div className="modal-overlay" onClick={() => setShowLegalNotice(false)}>
-                    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                        <button className="close-button" onClick={() => setShowLegalNotice(false)}>X</button>
-                        <LegalNotice language={language} />
+            {
+                showLegalNotice && (
+                    <div className="modal-overlay" onClick={() => setShowLegalNotice(false)}>
+                        <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+                            <button className="close-button" onClick={() => setShowLegalNotice(false)}>X</button>
+                            <LegalNotice language={language} />
+                        </div>
                     </div>
-                </div>
-            )}
+                )
+            }
 
-            {/* Modale pour la protection des données */}
-            {showPrivacyPolicy && (
-                <div className="modal-overlay" onClick={() => setShowPrivacyPolicy(false)}>
-                    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                        <button className="close-button" onClick={() => setShowPrivacyPolicy(false)}>X</button>
-                        <PrivacyDataProtection language={language} />
+            {
+                showPrivacyPolicy && (
+                    <div className="modal-overlay" onClick={() => setShowPrivacyPolicy(false)}>
+                        <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+                            <button className="close-button" onClick={() => setShowPrivacyPolicy(false)}>X</button>
+                            <PrivacyDataProtection language={language} />
+                        </div>
                     </div>
-                </div>
-            )}
-        </footer>
+                )
+            };
+        </>
     );
 }
 
 const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
-        const offset = -120; 
+        const offset = -120;
         const y = element.getBoundingClientRect().top + window.scrollY + offset;
 
         window.scrollTo({

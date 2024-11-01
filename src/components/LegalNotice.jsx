@@ -3,16 +3,22 @@ import React from "react";
 export function LegalNotice({ language }) {
     return (
         <section className="LegalNotice">
-            <h1>
+            <h2>
                 {language === "fr" ? "1. Présentation du site" : "1. Website Presentation"}
-            </h1>
+            </h2>
 
             <p>
-                {language === "fr" 
-                    ? `Le site web accessible à l'adresse suivante : https://natusdevelopment.netlify.app/ (ci-après "le Site") est un portfolio en ligne de développeuse web appartenant à :`
-                    : `The website accessible at the following address: https://natusdevelopment.netlify.app/ (hereinafter referred to as "the Site") is an online portfolio for a web developer owned by:`}
+                {language === "fr" ? (
+                    <React.Fragment>
+                        Le site web accessible à ladresse suivante : <br />
+                        https://natusdevelopment.netlify.app/ <br />
+                        (ci-après "le Site") est un portfolio en ligne de développeuse web appartenant à :
+                    </React.Fragment>
+                ) : <React.Fragment>
+                    The website accessible at the following address: https://natusdevelopment.netlify.app/ (hereinafter referred to as "the Site") is an online portfolio for a web developer owned by:`
+                </React.Fragment>
+                }
             </p>
-
             <p>
                 {language === "fr" ? (
                     <React.Fragment>
@@ -45,36 +51,36 @@ export function LegalNotice({ language }) {
                 )}
             </p>
 
-            <h1>
+            <h2>
                 {language === "fr" ? "2. Conditions d'utilisation" : "2. Terms of Use"}
-            </h1>
+            </h2>
             <p>
                 {language === "fr"
                     ? "L'utilisation du Site implique l'acceptation pleine et entière des conditions générales d'utilisation décrites ci-après. Ces conditions d'utilisation peuvent être modifiées ou complétées à tout moment. Les utilisateurs du Site sont donc invités à les consulter de manière régulière."
                     : "Using the Site implies full and complete acceptance of the terms of use described below. These terms of use may be modified or supplemented at any time. Users of the Site are therefore invited to consult them regularly."}
             </p>
 
-            <h1>
+            <h2>
                 {language === "fr" ? "3. Propriété intellectuelle" : "3. Intellectual Property"}
-            </h1>
+            </h2>
             <p>
                 {language === "fr"
                     ? "Tous les contenus présents sur le Site (textes, images, illustrations, logos, etc.) sont la propriété exclusive de Alizée Dereppe, sauf indication contraire. Toute reproduction, distribution, modification, adaptation ou publication, même partielle, de ces différents éléments est strictement interdite sans l'accord exprès de Alizée Dereppe."
                     : "All content on the Site (texts, images, illustrations, logos, etc.) is the exclusive property of Alizée Dereppe, unless otherwise indicated. Any reproduction, distribution, modification, adaptation, or publication, even partial, of these various elements is strictly prohibited without the express permission of Alizée Dereppe."}
             </p>
 
-            <h1>
+            <h2>
                 {language === "fr" ? "4. Limitations de responsabilité" : "4. Limitation of Liability"}
-            </h1>
+            </h2>
             <p>
                 {language === "fr"
                     ? "L’éditeur du Site ne pourra être tenu pour responsable des dommages directs ou indirects causés au matériel de l’utilisateur, lors de l’accès au Site, résultant de l’apparition d’un bug ou d’une incompatibilité."
                     : "The Site publisher cannot be held responsible for any direct or indirect damage caused to the user's equipment when accessing the Site, resulting from the occurrence of a bug or incompatibility."}
             </p>
 
-            <h1>
+            <h2>
                 {language === "fr" ? "5. Gestion des données personnelles" : "5. Management of Personal Data"}
-            </h1>
+            </h2>
             <p>
                 {language === "fr"
                     ? "Les informations recueillies via le formulaire de contact du Site (nom ou dénomination sociale, adresse e-mail, message) sont nécessaires pour pouvoir répondre aux demandes des utilisateurs. Ces données sont transmises et stockées via le service EmailJS. Elles ne sont en aucun cas revendues à des tiers ou utilisées à des fins commerciales sans le consentement explicite des utilisateurs."

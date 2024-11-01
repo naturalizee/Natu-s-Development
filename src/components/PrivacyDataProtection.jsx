@@ -1,11 +1,12 @@
 import React from "react";
+import "../styles/PrivacyDataProtection.scss"
 
 export function PrivacyDataProtection({ language }) {
     return (
         <section className="PrivacyDataProtection">
-            <h1>
+            <h2>
                 {language === "fr" ? "1. Nature des données collectées" : "1. Types of Data Collected"}
-            </h1>
+            </h2>
             <p>
                 {language === "fr" 
                     ? "Les données personnelles collectées sur le Site sont celles fournies volontairement par l'utilisateur lors du remplissage du formulaire de contact. Les données obligatoires sont :"
@@ -22,27 +23,27 @@ export function PrivacyDataProtection({ language }) {
                     : "This information is necessary to process and respond to user inquiries."}
             </p>
 
-            <h1>
+            <h2>
                 {language === "fr" ? "2. Finalité des données collectées" : "2. Purpose of Data Collection"}
-            </h1>
+            </h2>
             <p>
                 {language === "fr"
                     ? "Les données personnelles sont recueillies dans le seul but de répondre aux demandes envoyées via le formulaire de contact du Site. Elles ne sont ni revendues ni utilisées à des fins publicitaires."
                     : "Personal data is collected solely for the purpose of responding to inquiries sent via the Site's contact form. This data is neither sold nor used for advertising purposes."}
             </p>
 
-            <h1>
+            <h2>
                 {language === "fr" ? "3. Conservation des données" : "3. Data Retention"}
-            </h1>
+            </h2>
             <p>
                 {language === "fr"
                     ? "Les données sont conservées uniquement pour le temps nécessaire au traitement de la demande et sont stockées via le service EmailJS, qui est conforme aux réglementations RGPD. L'utilisateur peut demander la suppression de ses données en contactant natusdevelopment@gmail.com."
                     : "Data is retained only for the time necessary to process the request and is stored via the EmailJS service, which is GDPR-compliant. The user can request the deletion of their data by contacting natusdevelopment@gmail.com."}
             </p>
 
-            <h1>
+            <h2>
                 {language === "fr" ? "4. Droits des utilisateurs" : "4. User Rights"}
-            </h1>
+            </h2>
             <p>
                 {language === "fr"
                     ? "Conformément au RGPD, vous disposez des droits suivants concernant vos données personnelles :"
@@ -77,27 +78,27 @@ export function PrivacyDataProtection({ language }) {
                     : "To exercise these rights, please contact: natusdevelopment@gmail.com"}
             </p>
 
-            <h1>
+            <h2>
                 {language === "fr" ? "5. Sécurité des données" : "5. Data Security"}
-            </h1>
+            </h2>
             <p>
                 {language === "fr"
                     ? "L’éditeur s’engage à prendre toutes les mesures nécessaires pour garantir la sécurité et la confidentialité des données personnelles recueillies sur le Site. Les données sont stockées via le service EmailJS, qui respecte des standards de sécurité élevés."
                     : "The publisher is committed to taking all necessary measures to ensure the security and confidentiality of personal data collected on the Site. Data is stored via the EmailJS service, which adheres to high security standards."}
             </p>
 
-            <h1>
+            <h2>
                 {language === "fr" ? "6. Contact" : "6. Contact"}
-            </h1>
+            </h2>
             <p>
                 {language === "fr"
                     ? "Pour toute question relative à la politique de confidentialité ou pour l’exercice de vos droits, vous pouvez contacter : natusdevelopment@gmail.com."
                     : "For any questions regarding the privacy policy or to exercise your rights, you may contact: natusdevelopment@gmail.com."}
             </p>
 
-            <h1>
+            <h2>
                 {language === "fr" ? "7. Modification de la politique de confidentialité" : "7. Changes to the Privacy Policy"}
-            </h1>
+            </h2>
             <p>
                 {language === "fr"
                     ? "La présente politique de confidentialité peut être modifiée ou complétée à tout moment pour se conformer aux évolutions législatives ou réglementaires. Nous invitons donc les utilisateurs à la consulter régulièrement."

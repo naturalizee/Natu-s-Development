@@ -12,6 +12,7 @@ import { Header, Footer } from './components/Layout.jsx';
 import { Skills } from './components/Skills.jsx';
 import { Projects } from './components/Projects.jsx';
 import { Introduction } from './components/Introduction.jsx';
+import { PDFViewer } from './components/PDFViewer.jsx';
 import ContactForm from './components/ContactForm.jsx';
 import useToggleTheme from './components/toggleTheme';
 
@@ -40,6 +41,7 @@ const Portfolio = () => {
         <div id='projects-anchor' />
         <Projects language={language} />
         <div id='contact-anchor' />
+        <PDFViewer language={language} />
         <ContactForm language={language} />
       </main>
       <Footer language={language} />

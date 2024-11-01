@@ -46,10 +46,10 @@ export function Projects({ language }) {
                     />
                 </div>
                 <CardBody>
-                    <CardTitle tag="h5" className="card-title">
+                    <CardTitle tag="h3" className="card-title">
                         {language === 'fr' ? project.fields['Nom du projet'] : project.fields['Nom du projet (EN)']}
                     </CardTitle>
-                    <CardText className="card-text">
+                    <CardText tag="p" className="card-text">
                         {language === 'fr' ? project.fields['Description'] : project.fields['Description (EN)']}
                     </CardText>
                     <div className="technologies">
