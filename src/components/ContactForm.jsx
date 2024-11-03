@@ -81,9 +81,10 @@ const ContactForm = ({ language }) => {
                 
                 {/* HoneyPot field*/}
                 <div style={{ display: 'none' }}>
-                    <label>Leave this field blank</label>
+                    <label for="honeypot">Leave this field blank</label>
                     <input
                         type="text"
+                        id="honeypot"
                         name="honeypot"
                         value={formData.honeypot}
                         onChange={(e) => setFormData({ ...formData, honeypot: e.target.value })}
@@ -91,9 +92,10 @@ const ContactForm = ({ language }) => {
                 </div>
 
                 <div>
-                    <label>{language === 'fr' ? 'Nom' : 'Name'}</label>
+                    <label for="name">{language === 'fr' ? 'Nom' : 'Name'}</label>
                     <input
                         type="text"
+                        id="name"
                         name="name"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -101,9 +103,10 @@ const ContactForm = ({ language }) => {
                 </div>
 
                 <div>
-                    <label>{language === 'fr' ? 'Email' : 'Email'}</label>
+                    <label for="email">{language === 'fr' ? 'Email' : 'Email'}</label>
                     <input
                         type="email"
+                        id="email"
                         name="email"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -111,9 +114,10 @@ const ContactForm = ({ language }) => {
                 </div>
 
                 <div>
-                    <label>{language === 'fr' ? 'Message' : 'Message'}</label>
+                    <label for="message">{language === 'fr' ? 'Message' : 'Message'}</label>
                     <textarea
                         name="message"
+                        id="message"
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     ></textarea>
@@ -121,7 +125,7 @@ const ContactForm = ({ language }) => {
 
                 {error && <p style={{ color: "red" }}>{error}</p>}
 
-                <button type="submit">{language === 'fr' ? 'Envoyer' : 'Send'}</button>
+                <button aria-label="submit" type="submit">{language === 'fr' ? 'Envoyer' : 'Send'}</button>
 
                 {emailSent && <p style={{ color: "green" }}>{language === 'fr' ? 'Email envoyé avec succès !' : 'Email sent successfully!'}</p>}
             </form>

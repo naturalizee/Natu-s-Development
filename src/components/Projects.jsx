@@ -54,10 +54,10 @@ export function Projects({ language }) {
                     </CardText>
                     <div className="technologies">
                         {project.fields.Technologies?.map((tech) => (
-                            <button key={tech} className="tech-button">{tech}</button>
+                            <button aria-label="technologies" key={tech} className="tech-button">{tech}</button>
                         ))}
                     </div>
-                    <button className="see-more" onClick={() => openModale(project)}>
+                    <button aria-label="see more" className="see-more" onClick={() => openModale(project)}>
                         {language === 'fr' ? 'En savoir plus' : 'See more'}
                     </button>
                 </CardBody>

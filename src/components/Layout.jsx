@@ -32,16 +32,16 @@ export function Header({ toggleTheme, theme, language, toggleLanguage }) {
                 <h1>{language === 'fr' ? 'Alizée Dereppe' : 'Alizée Dereppe'} <span>{language === 'fr' ? 'Développeuse web' : 'Web Developer'}</span></h1>
             </div>
             <ul className={`nav ${isMenuOpen ? 'open' : ''}`}>
-                <li><button onClick={() => scrollToSection('profil-anchor')}>{language === 'fr' ? 'Profil' : 'Profile'}</button></li>
-                <li><button onClick={() => scrollToSection('skills-anchor')}>{language === 'fr' ? 'Compétences' : 'Skills'}</button></li>
-                <li><button onClick={() => scrollToSection('projects-anchor')}>{language === 'fr' ? 'Projets' : 'Projects'}</button></li>
-                <li><button className="contact-button" onClick={() => scrollToSection('contact-anchor')}>{language === 'fr' ? 'Contact' : 'Contact'}</button></li>
-                <li><button className="languageButton" onClick={toggleLanguage}>{language === 'fr' ? 'EN' : 'FR'}</button></li>
-                <li><button onClick={toggleTheme} className="theme-toggle-button">
+                <li><button aria-label="profil" onClick={() => scrollToSection('profil-anchor')}>{language === 'fr' ? 'Profil' : 'Profile'}</button></li>
+                <li><button aria-label="skills" onClick={() => scrollToSection('skills-anchor')}>{language === 'fr' ? 'Compétences' : 'Skills'}</button></li>
+                <li><button aria-label="projects" onClick={() => scrollToSection('projects-anchor')}>{language === 'fr' ? 'Projets' : 'Projects'}</button></li>
+                <li><button aria-label="contact" className="contact-button" onClick={() => scrollToSection('contact-anchor')}>{language === 'fr' ? 'Contact' : 'Contact'}</button></li>
+                <li><button aria-label="language" className="languageButton" onClick={toggleLanguage}>{language === 'fr' ? 'EN' : 'FR'}</button></li>
+                <li><button aria-label="theme" onClick={toggleTheme} className="theme-toggle-button">
                     {theme === 'light' ? <i className="fa-solid fa-moon"></i> : <i className="fa-solid fa-sun"></i>}
                 </button></li>
             </ul>
-            <button className="hamburger" onClick={toggleMenu}>
+            <button aria-label="menu" className="hamburger" onClick={toggleMenu}>
                 <span className="bar"></span>
                 <span className="bar"></span>
                 <span className="bar"></span>
@@ -61,10 +61,10 @@ export function Footer({ language }) {
             <footer>
                 <p>{language === 'fr' ? '© 2024 Natu\'s Development' : '© 2024 Natu\'s Development'}</p>
                 <nav>
-                    <button onClick={() => setShowLegalNotice(true)}>
+                    <button aria-label="legal notice" onClick={() => setShowLegalNotice(true)}>
                         {language === 'fr' ? 'Mentions Légales' : 'Legal Notice'}
                     </button>
-                    <button onClick={() => setShowPrivacyPolicy(true)}>
+                    <button aria-label="data protection" onClick={() => setShowPrivacyPolicy(true)}>
                         {language === 'fr' ? 'Protection des Données' : 'Data Protection'}
                     </button>
                 </nav>
@@ -74,7 +74,7 @@ export function Footer({ language }) {
                 showLegalNotice && (
                     <div className="modal-overlay" onClick={() => setShowLegalNotice(false)}>
                         <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                            <button className="close-button" onClick={() => setShowLegalNotice(false)}>X</button>
+                            <button aria-label="close" className="close-button" onClick={() => setShowLegalNotice(false)}>X</button>
                             <LegalNotice language={language} />
                         </div>
                     </div>
@@ -85,7 +85,7 @@ export function Footer({ language }) {
                 showPrivacyPolicy && (
                     <div className="modal-overlay" onClick={() => setShowPrivacyPolicy(false)}>
                         <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                            <button className="close-button" onClick={() => setShowPrivacyPolicy(false)}>X</button>
+                            <button aria-label="close" className="close-button" onClick={() => setShowPrivacyPolicy(false)}>X</button>
                             <PrivacyDataProtection language={language} />
                         </div>
                     </div>

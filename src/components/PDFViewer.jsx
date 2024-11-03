@@ -9,7 +9,7 @@ export const PDFViewer = ({ language }) => {
 
   return (
     <div className="download-cv">
-      <button onClick={handleDownload}>
+      <button aria-label="CV download" onClick={handleDownload}>
         {language === "fr" ? "Télécharger mon CV" : "Download my CV"}
       </button>
     </div>
