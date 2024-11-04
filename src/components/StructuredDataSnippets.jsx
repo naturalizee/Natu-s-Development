@@ -14,7 +14,6 @@ export const AboutHelmet = () => (
     <Helmet>
         <script type="application/ld+json">
             {`
-                "@context": "https://schema.org",
                 "@type": "AboutPage",
                 "name": "À propos de moi",
                 "description": "Présentation et parcours de Alizée Dereppe, développeuse web.",
@@ -30,7 +29,6 @@ export const ContactFormHelmet = () => (
         <script type="application/ld+json">
             {`
         {
-          "@context": "https://schema.org",
           "@type": "ContactPage",
           "name": "Formulaire de Contact",
           "description": "Page de contact pour joindre Alizée Dereppe, développeuse web.",
@@ -47,7 +45,6 @@ export const IntroductionHelmet = () => (
         <script type="application/ld+json">
             {`
         {
-          "@context": "https://schema.org",
           "@type": "WebPage",
           "name": "Introduction",
           "description": "Page d'introduction présentant les services et compétences de Alizée Dereppe.",
@@ -64,7 +61,6 @@ export const LegalNoticeHelmet = () => (
         <script type="application/ld+json">
             {`
         {
-          "@context": "https://schema.org",
           "@type": "LegalService",
           "name": "Mentions Légales",
           "description": "Page des mentions légales de Alizée Dereppe.",
@@ -81,7 +77,6 @@ export const ModaleProjectsHelmet = () => (
         <script type="application/ld+json">
             {`
         {
-          "@context": "https://schema.org",
           "@type": "CreativeWork",
           "name": "Projets en Détail",
           "description": "Présentation détaillée des projets de Alizée Dereppe.",
@@ -98,7 +93,6 @@ export const PrivacyDataProtectionHelmet = () => (
         <script type="application/ld+json">
             {`
         {
-          "@context": "https://schema.org",
           "@type": "PrivacyPolicy",
           "name": "Protection des Données",
           "description": "Politique de confidentialité et protection des données de Alizée Dereppe.",
@@ -115,7 +109,6 @@ export const ProjectsHelmet = () => (
         <script type="application/ld+json">
             {`
         {
-          "@context": "https://schema.org",
           "@type": "CollectionPage",
           "name": "Projets",
           "description": "Liste des projets de développement web réalisés par Alizée Dereppe.",
@@ -132,7 +125,6 @@ export const SkillsHelmet = () => (
         <script type="application/ld+json">
             {`
         {
-          "@context": "https://schema.org",
           "@type": "WebPage",
           "name": "Compétences",
           "description": "Liste des compétences et expertises de Alizée Dereppe en développement web.",
