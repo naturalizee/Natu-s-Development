@@ -2,27 +2,33 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
 // Code pour la page "À propos de moi"
+const ldJson = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "À propos de moi",
+    "description": "Présentation et parcours de Alizée Dereppe, développeuse web.",
+    "url": "https://natusdevelopment.netlify.app/"
+}
+
 export const AboutHelmet = () => (
-  <Helmet>
-    <script type="application/ld+json">
-      {`
-        {
-          "@context": "https://schema.org",
-          "@type": "AboutPage",
-          "name": "À propos de moi",
-          "description": "Présentation et parcours de Alizée Dereppe, développeuse web.",
-          "url": "https://natusdevelopment.netlify.app/"
-        }
-      `}
-    </script>
-  </Helmet>
+    <Helmet>
+        <script type="application/ld+json">
+            {`
+                "@context": "https://schema.org",
+                "@type": "AboutPage",
+                "name": "À propos de moi",
+                "description": "Présentation et parcours de Alizée Dereppe, développeuse web.",
+                "url": "https://natusdevelopment.netlify.app/"
+            `}
+        </script>
+    </Helmet>
 );
 
 // Code pour le formulaire de contact
 export const ContactFormHelmet = () => (
-  <Helmet>
-    <script type="application/ld+json">
-      {`
+    <Helmet>
+        <script type="application/ld+json">
+            {`
         {
           "@context": "https://schema.org",
           "@type": "ContactPage",
@@ -31,15 +37,15 @@ export const ContactFormHelmet = () => (
           "url": "https://natusdevelopment.netlify.app/"
         }
       `}
-    </script>
-  </Helmet>
+        </script>
+    </Helmet>
 );
 
 // Code pour l'introduction
 export const IntroductionHelmet = () => (
-  <Helmet>
-    <script type="application/ld+json">
-      {`
+    <Helmet>
+        <script type="application/ld+json">
+            {`
         {
           "@context": "https://schema.org",
           "@type": "WebPage",
@@ -48,15 +54,15 @@ export const IntroductionHelmet = () => (
           "url": "https://natusdevelopment.netlify.app/"
         }
       `}
-    </script>
-  </Helmet>
+        </script>
+    </Helmet>
 );
 
 // Code pour les mentions légales
 export const LegalNoticeHelmet = () => (
-  <Helmet>
-    <script type="application/ld+json">
-      {`
+    <Helmet>
+        <script type="application/ld+json">
+            {`
         {
           "@context": "https://schema.org",
           "@type": "LegalService",
@@ -65,15 +71,15 @@ export const LegalNoticeHelmet = () => (
           "url": "https://natusdevelopment.netlify.app/"
         }
       `}
-    </script>
-  </Helmet>
+        </script>
+    </Helmet>
 );
 
 // Code pour la modale des projets
 export const ModaleProjectsHelmet = () => (
-  <Helmet>
-    <script type="application/ld+json">
-      {`
+    <Helmet>
+        <script type="application/ld+json">
+            {`
         {
           "@context": "https://schema.org",
           "@type": "CreativeWork",
@@ -82,15 +88,15 @@ export const ModaleProjectsHelmet = () => (
           "url": "https://natusdevelopment.netlify.app/"
         }
       `}
-    </script>
-  </Helmet>
+        </script>
+    </Helmet>
 );
 
 // Code pour la page de protection des données
 export const PrivacyDataProtectionHelmet = () => (
-  <Helmet>
-    <script type="application/ld+json">
-      {`
+    <Helmet>
+        <script type="application/ld+json">
+            {`
         {
           "@context": "https://schema.org",
           "@type": "PrivacyPolicy",
@@ -99,15 +105,15 @@ export const PrivacyDataProtectionHelmet = () => (
           "url": "https://natusdevelopment.netlify.app/"
         }
       `}
-    </script>
-  </Helmet>
+        </script>
+    </Helmet>
 );
 
 // Code pour la page des projets
 export const ProjectsHelmet = () => (
-  <Helmet>
-    <script type="application/ld+json">
-      {`
+    <Helmet>
+        <script type="application/ld+json">
+            {`
         {
           "@context": "https://schema.org",
           "@type": "CollectionPage",
@@ -116,15 +122,15 @@ export const ProjectsHelmet = () => (
           "url": "https://natusdevelopment.netlify.app/"
         }
       `}
-    </script>
-  </Helmet>
+        </script>
+    </Helmet>
 );
 
 // Code pour la page des compétences
 export const SkillsHelmet = () => (
-  <Helmet>
-    <script type="application/ld+json">
-      {`
+    <Helmet>
+        <script type="application/ld+json">
+            {`
         {
           "@context": "https://schema.org",
           "@type": "WebPage",
@@ -133,6 +139,6 @@ export const SkillsHelmet = () => (
           "url": "https://natusdevelopment.netlify.app/"
         }
       `}
-    </script>
-  </Helmet>
+        </script>
+    </Helmet>
 );
