@@ -2,13 +2,13 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
 // Code pour la page "À propos de moi"
-const ldJson = {
-    "@context": "https://schema.org",
-    "@type": "AboutPage",
-    "name": "À propos de moi",
-    "description": "Présentation et parcours de Alizée Dereppe, développeuse web.",
-    "url": "https://natusdevelopment.netlify.app/"
-}
+// const ldJson = {
+//     "@context": "https://schema.org",
+//     "@type": "AboutPage",
+//     "name": "À propos de moi",
+//     "description": "Présentation et parcours de Alizée Dereppe, développeuse web.",
+//     "url": "https://natusdevelopment.netlify.app/"
+// }
 
 export const AboutHelmet = () => (
     <Helmet>
