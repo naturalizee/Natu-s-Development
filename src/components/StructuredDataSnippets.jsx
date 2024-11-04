@@ -14,7 +14,6 @@ export const AboutHelmet = () => (
     <Helmet>
         <script type="application/ld+json">
             {`
-                "@type": "AboutPage",
                 "name": "À propos de moi",
                 "description": "Présentation et parcours de Alizée Dereppe, développeuse web.",
                 "url": "https://natusdevelopment.netlify.app/"
@@ -29,7 +28,6 @@ export const ContactFormHelmet = () => (
         <script type="application/ld+json">
             {`
         {
-          "@type": "ContactPage",
           "name": "Formulaire de Contact",
           "description": "Page de contact pour joindre Alizée Dereppe, développeuse web.",
           "url": "https://natusdevelopment.netlify.app/"
@@ -45,7 +43,6 @@ export const IntroductionHelmet = () => (
         <script type="application/ld+json">
             {`
         {
-          "@type": "WebPage",
           "name": "Introduction",
           "description": "Page d'introduction présentant les services et compétences de Alizée Dereppe.",
           "url": "https://natusdevelopment.netlify.app/"
@@ -61,7 +58,6 @@ export const LegalNoticeHelmet = () => (
         <script type="application/ld+json">
             {`
         {
-          "@type": "LegalService",
           "name": "Mentions Légales",
           "description": "Page des mentions légales de Alizée Dereppe.",
           "url": "https://natusdevelopment.netlify.app/"
@@ -77,7 +73,6 @@ export const ModaleProjectsHelmet = () => (
         <script type="application/ld+json">
             {`
         {
-          "@type": "CreativeWork",
           "name": "Projets en Détail",
           "description": "Présentation détaillée des projets de Alizée Dereppe.",
           "url": "https://natusdevelopment.netlify.app/"
@@ -93,7 +88,6 @@ export const PrivacyDataProtectionHelmet = () => (
         <script type="application/ld+json">
             {`
         {
-          "@type": "PrivacyPolicy",
           "name": "Protection des Données",
           "description": "Politique de confidentialité et protection des données de Alizée Dereppe.",
           "url": "https://natusdevelopment.netlify.app/"
@@ -109,7 +103,6 @@ export const ProjectsHelmet = () => (
         <script type="application/ld+json">
             {`
         {
-          "@type": "CollectionPage",
           "name": "Projets",
           "description": "Liste des projets de développement web réalisés par Alizée Dereppe.",
           "url": "https://natusdevelopment.netlify.app/"
@@ -125,7 +118,6 @@ export const SkillsHelmet = () => (
         <script type="application/ld+json">
             {`
         {
-          "@type": "WebPage",
           "name": "Compétences",
           "description": "Liste des compétences et expertises de Alizée Dereppe en développement web.",
           "url": "https://natusdevelopment.netlify.app/"
