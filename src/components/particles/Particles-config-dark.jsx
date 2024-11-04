@@ -6,6 +6,7 @@ const particlesConfigDark = {
           enable: true,
           value_area: 800,
         },
+        limit: 100,
       },
       color: {
         value: "#c1b5d0", // Particules violet doux pour correspondre au thème sombre

@@ -6,6 +6,7 @@ const particlesConfigLight = {
           enable: true,
           value_area: 800,
         },
+        limit: 100,
       },
       color: {
         value: "#a89fc6", // Particules blanches

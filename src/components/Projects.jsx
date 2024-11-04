@@ -85,7 +85,7 @@ export function Projects({ language }) {
                     goToSlide={goToSlide}
                     offsetRadius={2}
                     animationConfig={config.gentle}
-                    showNavigation={true}
+                    showNavigation={false}
                 />
             </div>
             <ModaleProjects

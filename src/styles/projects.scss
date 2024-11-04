@@ -18,33 +18,6 @@
 }
 }
 
-.fa-circle-arrow-left,
-.fa-circle-arrow-right {
-  background-color: var(--secondary);
-  color: white;
-  border-radius: 50%;
-  padding: 10px;
-  position: absolute;
-  top: 0;
-  transform: translateY(-50%);
-  cursor: pointer;
-  z-index: 2;
-  font-size: 18px;
-  margin: 20px;
-
-  &:hover {
-    background-color: var(--primary);
-  }
-
-  &.fa-circle-arrow-left {
-    left: 30%;
-  }
-
-  &.fa-circle-arrow-right {
-    right: 30%;
-  }
-}
-
 
 a {
   display: inline-block;
@@ -59,25 +32,28 @@ a {
 }
 
 .projects {
-  padding: 50px;
   background: none;
   border-radius: 15px;
   box-shadow: var(--box);
   width: 80%;
   margin: auto;
-  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-bottom: 20px;
 
   h2 {
     text-align: center;
-    margin-bottom: 30px;
+    margin: auto;
+    padding: 20px 0;
   }
 
   @media (max-width: 768px) {
-    padding: 30px;
+    padding: 15px;
   }
 
   @media (max-width: 480px) {
-    padding: 20px;
+    padding: 15px;
   }
 
   .card-main {
@@ -95,6 +71,10 @@ a {
     &:hover {
       transform: translateY(-5px);
     }
+
+    h3 {
+      font-size: large;
+    }
   }
 
   .circle-div {
@@ -103,7 +83,7 @@ a {
     width: 160px;
     border-radius: 50%;
     overflow: hidden;
-    margin: 30px 0;
+    margin: 10px 0;
 
     .cover-image {
       width: 100%;
@@ -135,7 +115,7 @@ a {
       border: none;
       padding: 5px 10px;
       border-radius: 5px;
-      margin: 0 5px;
+      margin: 5px 5px;
       color: white;
       transition: background-color 0.3s ease;
     }
