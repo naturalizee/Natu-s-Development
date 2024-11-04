@@ -6,6 +6,7 @@ import { v4 as uuidv4 } from "uuid";
 import { Card, CardBody, CardTitle, CardText } from "reactstrap";
 import ModaleProjects from './ModaleProjects';
 import { config } from "react-spring";
+import { ProjectsHelmet } from "./StructuredDataSnippets";
 
 import '../styles/projects.scss';
 
@@ -77,23 +78,26 @@ export function Projects({ language }) {
     };
 
     return (
-        <section className="projects">
-            <h2>{language === 'fr' ? 'Projets' : 'Projects'}</h2>
-            <div style={{ width: "80%", margin: " 300px auto" }}>
-                <Carousel
-                    slides={slides}
-                    goToSlide={goToSlide}
-                    offsetRadius={2}
-                    animationConfig={config.gentle}
-                    showNavigation={false}
+        <>
+            <ProjectsHelmet />
+            <section className="projects">
+                <h2>{language === 'fr' ? 'Projets' : 'Projects'}</h2>
+                <div style={{ width: "80%", margin: " 300px auto" }}>
+                    <Carousel
+                        slides={slides}
+                        goToSlide={goToSlide}
+                        offsetRadius={2}
+                        animationConfig={config.gentle}
+                        showNavigation={false}
+                    />
+                </div>
+                <ModaleProjects
+                    isOpen={isModaleOpen}
+                    project={currentProject}
+                    onClose={closeModale}
+                    language={language}
                 />
-            </div>
-            <ModaleProjects
-                isOpen={isModaleOpen}
-                project={currentProject}
-                onClose={closeModale}
-                language={language}
-            />
-        </section>
+            </section>
+        </>
     );
 }

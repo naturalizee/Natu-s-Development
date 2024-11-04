@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
+import { ContactFormHelmet } from "./StructuredDataSnippets";
 import '../styles/contactForm.scss';
 
 /* ContactForm configurations */
@@ -18,10 +19,10 @@ const ContactForm = ({ language }) => {
         e.preventDefault();
         setError("");
 
-   
+
         if (formData.honeypot) {
             console.log("Bot detected - form not submitted");
-            return; 
+            return;
         }
 
         if (!formData.name || !formData.email || !formData.message) {
@@ -38,7 +39,7 @@ const ContactForm = ({ language }) => {
                     name: formData.name,
                     email: formData.email,
                     message: formData.message,
-                    reply_to: formData.email 
+                    reply_to: formData.email
                 },
                 process.env.REACT_APP_EMAILJS_USER_ID
             )
@@ -62,7 +63,7 @@ const ContactForm = ({ language }) => {
                             name: "",
                             email: "",
                             message: "",
-                            honeypot: "" 
+                            honeypot: ""
                         });
                     }).catch((error) => {
                         setError(language === 'fr' ? "Erreur lors de l'envoi de la réponse automatique." : "Error sending auto-reply.");
@@ -75,61 +76,64 @@ const ContactForm = ({ language }) => {
     };
 
     return (
-        <div className="contact">
-            <h2>{language === 'fr' ? 'Contact' : 'Contact'}</h2>
-            <form className="contact-form" onSubmit={handleSubmit}>
-                
-                {/* HoneyPot field*/}
-                <div style={{ display: 'none' }}>
-                    <label for="honeypot">Leave this field blank</label>
-                    <input
-                        type="text"
-                        id="honeypot"
-                        name="honeypot"
-                        value={formData.honeypot}
-                        onChange={(e) => setFormData({ ...formData, honeypot: e.target.value })}
-                    />
-                </div>
+        <>
+            < ContactFormHelmet />
+            <div className="contact">
+                <h2>{language === 'fr' ? 'Contact' : 'Contact'}</h2>
+                <form className="contact-form" onSubmit={handleSubmit}>
 
-                <div>
-                    <label for="name">{language === 'fr' ? 'Nom' : 'Name'}</label>
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    />
-                </div>
+                    {/* HoneyPot field*/}
+                    <div style={{ display: 'none' }}>
+                        <label for="honeypot">Leave this field blank</label>
+                        <input
+                            type="text"
+                            id="honeypot"
+                            name="honeypot"
+                            value={formData.honeypot}
+                            onChange={(e) => setFormData({ ...formData, honeypot: e.target.value })}
+                        />
+                    </div>
 
-                <div>
-                    <label for="email">{language === 'fr' ? 'Email' : 'Email'}</label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    />
-                </div>
+                    <div>
+                        <label for="name">{language === 'fr' ? 'Nom' : 'Name'}</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            value={formData.name}
+                            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        />
+                    </div>
 
-                <div>
-                    <label for="message">{language === 'fr' ? 'Message' : 'Message'}</label>
-                    <textarea
-                        name="message"
-                        id="message"
-                        value={formData.message}
-                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    ></textarea>
-                </div>
+                    <div>
+                        <label for="email">{language === 'fr' ? 'Email' : 'Email'}</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        />
+                    </div>
 
-                {error && <p style={{ color: "red" }}>{error}</p>}
+                    <div>
+                        <label for="message">{language === 'fr' ? 'Message' : 'Message'}</label>
+                        <textarea
+                            name="message"
+                            id="message"
+                            value={formData.message}
+                            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                        ></textarea>
+                    </div>
 
-                <button aria-label="submit" type="submit">{language === 'fr' ? 'Envoyer' : 'Send'}</button>
+                    {error && <p style={{ color: "red" }}>{error}</p>}
 
-                {emailSent && <p style={{ color: "green" }}>{language === 'fr' ? 'Email envoyé avec succès !' : 'Email sent successfully!'}</p>}
-            </form>
-        </div>
+                    <button aria-label="submit" type="submit">{language === 'fr' ? 'Envoyer' : 'Send'}</button>
+
+                    {emailSent && <p style={{ color: "green" }}>{language === 'fr' ? 'Email envoyé avec succès !' : 'Email sent successfully!'}</p>}
+                </form>
+            </div>
+        </>
     );
 };
 
