@@ -19,7 +19,6 @@ const ContactForm = ({ language }) => {
         e.preventDefault();
         setError("");
 
-
         if (formData.honeypot) {
             console.log("Bot detected - form not submitted");
             return;
@@ -65,11 +64,11 @@ const ContactForm = ({ language }) => {
                             message: "",
                             honeypot: ""
                         });
-                    }).catch((error) => {
+                    }).catch(() => {
                         setError(language === 'fr' ? "Erreur lors de l'envoi de la réponse automatique." : "Error sending auto-reply.");
                     });
                 },
-                (error) => {
+                () => {
                     setError(language === 'fr' ? "Une erreur est survenue lors de l'envoi du message." : "An error occurred while sending the message.");
                 }
             );
@@ -77,14 +76,14 @@ const ContactForm = ({ language }) => {
 
     return (
         <>
-            < ContactFormHelmet />
+            <ContactFormHelmet />
             <div className="contact">
                 <h2>{language === 'fr' ? 'Contact' : 'Contact'}</h2>
                 <form className="contact-form" onSubmit={handleSubmit}>
 
                     {/* HoneyPot field*/}
                     <div style={{ display: 'none' }}>
-                        <label for="honeypot">Leave this field blank</label>
+                        <label htmlFor="honeypot">Leave this field blank</label>
                         <input
                             type="text"
                             id="honeypot"
@@ -95,7 +94,7 @@ const ContactForm = ({ language }) => {
                     </div>
 
                     <div>
-                        <label for="name">{language === 'fr' ? 'Nom' : 'Name'}</label>
+                        <label htmlFor="name">{language === 'fr' ? 'Nom' : 'Name'}</label>
                         <input
                             type="text"
                             id="name"
@@ -106,7 +105,7 @@ const ContactForm = ({ language }) => {
                     </div>
 
                     <div>
-                        <label for="email">{language === 'fr' ? 'Email' : 'Email'}</label>
+                        <label htmlFor="email">{language === 'fr' ? 'Email' : 'Email'}</label>
                         <input
                             type="email"
                             id="email"
@@ -117,7 +116,7 @@ const ContactForm = ({ language }) => {
                     </div>
 
                     <div>
-                        <label for="message">{language === 'fr' ? 'Message' : 'Message'}</label>
+                        <label htmlFor="message">{language === 'fr' ? 'Message' : 'Message'}</label>
                         <textarea
                             name="message"
                             id="message"

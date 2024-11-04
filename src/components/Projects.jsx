@@ -40,11 +40,13 @@ export function Projects({ language }) {
         content: (
             <Card className="card-main" onClick={() => setGoToSlide(index)}>
                 <div className="circle-div">
-                    <img
-                        src={project.fields['Image de couverture']?.[0]?.url}
-                        alt={language === 'fr' ? 'Image de couverture' : 'Cover image'}
-                        className="cover-image"
-                    />
+                    {project.fields['Image de couverture'] && project.fields['Image de couverture'][0] && (
+                        <img
+                            src={project.fields['Image de couverture'][0].url}
+                            alt={language === 'fr' ? 'Image de couverture' : 'Cover image'}
+                            className="cover-image"
+                        />
+                    )}
                 </div>
                 <CardBody>
                     <CardTitle tag="h3" className="card-title">
@@ -54,7 +56,7 @@ export function Projects({ language }) {
                         {language === 'fr' ? project.fields['Description'] : project.fields['Description (EN)']}
                     </CardText>
                     <div className="technologies">
-                        {project.fields.Technologies?.map((tech) => (
+                        {project.fields.Technologies && project.fields.Technologies.map((tech) => (
                             <button aria-label="technologies" key={tech} className="tech-button">{tech}</button>
                         ))}
                     </div>

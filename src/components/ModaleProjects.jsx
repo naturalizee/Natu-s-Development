@@ -65,22 +65,21 @@ const ModaleProjects = ({ isOpen, project, onClose, language }) => {
                 <div className="modale-content" onClick={(e) => e.stopPropagation()}>
                     <button aria-label="close" className="close-button" onClick={onClose}>X</button>
                     <Slider {...settings}>
-                        {project.fields['Images supplémentaires']?.map((image, index) => (
+                        {project.fields['Images supplémentaires'] && project.fields['Images supplémentaires'].map((image, index) => (
                             <div key={index} onClick={() => handleImageClick(image)}>
                                 <img src={image.url} alt={`Slide ${index}`} className="modale-image" />
                             </div>
                         ))}
                     </Slider>
-                    {/* Informations du projet sous l'image */}
                     <div className="image-info">
                         <div className="technologies">
-                            {project.fields.Technologies?.map((tech) => (
+                            {project.fields.Technologies && project.fields.Technologies.map((tech) => (
                                 <button aria-label="technologies" key={tech} className="tech-button">{tech}</button>
                             ))}
                         </div>
                         <p>{language === 'fr' ? project.fields['Description'] : project.fields['Description (EN)']}</p>
                         <ul className="objectives">
-                            {project.fields[language === 'fr' ? 'Objectifs' : 'Objectifs (EN)']?.map((objective, index) => (
+                            {project.fields[language === 'fr' ? 'Objectifs' : 'Objectifs (EN)'] && project.fields[language === 'fr' ? 'Objectifs' : 'Objectifs (EN)'].map((objective, index) => (
                                 <li key={index}>{objective}</li>
                             ))}
                         </ul>

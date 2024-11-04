@@ -8,7 +8,7 @@ import portrait from '../images/auto-portrait.webp';
 export function About({ language }) {
   return (
     <>
-      < AboutHelmet />
+      <AboutHelmet />
       <section className="about">
         <img src={portrait} alt={language === 'fr' ? 'Portrait de moi'
           : 'My portrait'} className="profile-pic" />
