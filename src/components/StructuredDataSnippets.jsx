@@ -4,8 +4,6 @@ import { Helmet } from 'react-helmet-async';
 // Code pour la page "À propos de moi"
 export const AboutHelmet = () => (
   <Helmet>
-    <title>À propos de moi | Alizée Dereppe</title>
-    <meta name="description" content="Découvrez l'histoire et le parcours de Alizée Dereppe, développeuse web." />
     <script type="application/ld+json">
       {`
         {
@@ -23,8 +21,6 @@ export const AboutHelmet = () => (
 // Code pour le formulaire de contact
 export const ContactFormHelmet = () => (
   <Helmet>
-    <title>Formulaire de Contact | Alizée Dereppe</title>
-    <meta name="description" content="Contactez Alizée Dereppe via le formulaire en ligne pour toute demande ou projet." />
     <script type="application/ld+json">
       {`
         {
@@ -42,8 +38,6 @@ export const ContactFormHelmet = () => (
 // Code pour l'introduction
 export const IntroductionHelmet = () => (
   <Helmet>
-    <title>Introduction | Alizée Dereppe</title>
-    <meta name="description" content="Introduction aux services et compétences de Alizée Dereppe." />
     <script type="application/ld+json">
       {`
         {
@@ -61,8 +55,6 @@ export const IntroductionHelmet = () => (
 // Code pour les mentions légales
 export const LegalNoticeHelmet = () => (
   <Helmet>
-    <title>Mentions Légales | Alizée Dereppe</title>
-    <meta name="description" content="Consultez les mentions légales du site web de Alizée Dereppe." />
     <script type="application/ld+json">
       {`
         {
@@ -80,8 +72,6 @@ export const LegalNoticeHelmet = () => (
 // Code pour la modale des projets
 export const ModaleProjectsHelmet = () => (
   <Helmet>
-    <title>Projets en Détail | Alizée Dereppe</title>
-    <meta name="description" content="Découvrez les détails des projets de Alizée Dereppe." />
     <script type="application/ld+json">
       {`
         {
@@ -99,8 +89,6 @@ export const ModaleProjectsHelmet = () => (
 // Code pour la page de protection des données
 export const PrivacyDataProtectionHelmet = () => (
   <Helmet>
-    <title>Protection des Données | Alizée Dereppe</title>
-    <meta name="description" content="Consultez la politique de protection des données de Alizée Dereppe." />
     <script type="application/ld+json">
       {`
         {
@@ -118,8 +106,6 @@ export const PrivacyDataProtectionHelmet = () => (
 // Code pour la page des projets
 export const ProjectsHelmet = () => (
   <Helmet>
-    <title>Projets | Alizée Dereppe</title>
-    <meta name="description" content="Découvrez les projets web réalisés par Alizée Dereppe." />
     <script type="application/ld+json">
       {`
         {
@@ -137,8 +123,6 @@ export const ProjectsHelmet = () => (
 // Code pour la page des compétences
 export const SkillsHelmet = () => (
   <Helmet>
-    <title>Compétences | Alizée Dereppe</title>
-    <meta name="description" content="Découvrez les compétences de développement web de Alizée Dereppe." />
     <script type="application/ld+json">
       {`
         {
