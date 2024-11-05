@@ -1,5 +1,5 @@
 import React from "react";
-import { SkillsHelmet } from "./StructuredDataSnippets";
+// import { SkillsHelmet } from "./StructuredDataSnippets";
 import '../styles/skills.scss';
 
 // Utilisation de require.context pour charger tous les fichiers d'images de manière dynamique
@@ -27,7 +27,7 @@ export function Skills({ language }) {
 
     return (
         <>
-            < SkillsHelmet />
+            {/* < SkillsHelmet /> */}
             <section className="skills">
                 <h2>{language === 'fr' ? 'Compétences' : 'Skills'}</h2>
                 <ul>

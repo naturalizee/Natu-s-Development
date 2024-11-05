@@ -1,11 +1,11 @@
 import React from "react";
-import { PrivacyDataProtectionHelmet } from "./StructuredDataSnippets";
+// import { PrivacyDataProtectionHelmet } from "./StructuredDataSnippets";
 import "../styles/PrivacyDataProtection.scss"
 
 export function PrivacyDataProtection({ language }) {
     return (
         <>
-            <PrivacyDataProtectionHelmet />
+            {/* <PrivacyDataProtectionHelmet /> */}
             <section className="PrivacyDataProtection">
                 <h2>
                     {language === "fr" ? "1. Nature des données collectées" : "1. Types of Data Collected"}

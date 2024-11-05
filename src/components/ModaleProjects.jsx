@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Slider from 'react-slick';
-import { ModaleProjectsHelmet } from './StructuredDataSnippets';
+// import { ModaleProjectsHelmet } from './StructuredDataSnippets';
 import '../styles/modaleProjects.scss';
 import '../styles/projects.scss';
 
@@ -60,7 +60,7 @@ const ModaleProjects = ({ isOpen, project, onClose, language }) => {
 
     return (
         <>
-            <ModaleProjectsHelmet />
+            {/* <ModaleProjectsHelmet /> */}
             <div className="modale-overlay" onClick={onClose}>
                 <div className="modale-content" onClick={(e) => e.stopPropagation()}>
                     <button aria-label="close" className="close-button" onClick={onClose}>X</button>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
-import { ContactFormHelmet } from "./StructuredDataSnippets";
+// import { ContactFormHelmet } from "./StructuredDataSnippets";
 import '../styles/contactForm.scss';
 
 /* ContactForm configurations */
@@ -76,7 +76,7 @@ const ContactForm = ({ language }) => {
 
     return (
         <>
-            <ContactFormHelmet />
+            {/* <ContactFormHelmet /> */}
             <div className="contact">
                 <h2>{language === 'fr' ? 'Contact' : 'Contact'}</h2>
                 <form className="contact-form" onSubmit={handleSubmit}>

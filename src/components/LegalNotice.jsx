@@ -1,10 +1,10 @@
 import React from "react";
-import { LegalNoticeHelmet } from "./StructuredDataSnippets";
+// import { LegalNoticeHelmet } from "./StructuredDataSnippets";
 
 export function LegalNotice({ language }) {
     return (
         <>
-            <LegalNoticeHelmet />
+            {/* <LegalNoticeHelmet /> */}
             <section className="LegalNotice">
                 <h2>
                     {language === "fr" ? "1. Présentation du site" : "1. Website Presentation"}
