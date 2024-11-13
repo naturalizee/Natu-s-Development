@@ -6,8 +6,6 @@ import { v4 as uuidv4 } from "uuid";
 import { Card, CardBody, CardTitle, CardText } from "reactstrap";
 import ModaleProjects from './ModaleProjects';
 import { config } from "react-spring";
-// import { ProjectsHelmet } from "./StructuredDataSnippets";
-
 import '../styles/projects.scss';
 
 export function Projects({ language }) {
@@ -16,6 +14,7 @@ export function Projects({ language }) {
     const [currentProject, setCurrentProject] = useState(null);
     const [goToSlide, setGoToSlide] = useState(0);
 
+    /* AirTable API call */
     useEffect(() => {
         const fetchProjects = async () => {
             try {
@@ -80,8 +79,6 @@ export function Projects({ language }) {
     };
 
     return (
-        <>
-            {/* <ProjectsHelmet /> */}
             <section className="projects">
                 <h2>{language === 'fr' ? 'Projets' : 'Projects'}</h2>
                 <div style={{ width: "80%", margin: " 300px auto" }}>
@@ -100,6 +97,5 @@ export function Projects({ language }) {
                     language={language}
                 />
             </section>
-        </>
     );
 }

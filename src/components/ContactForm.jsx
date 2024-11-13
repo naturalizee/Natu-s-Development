@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
-// import { ContactFormHelmet } from "./StructuredDataSnippets";
 import '../styles/contactForm.scss';
 
 /* ContactForm configurations */
@@ -9,7 +8,7 @@ const ContactForm = ({ language }) => {
         name: "",
         email: "",
         message: "",
-        honeypot: "" // Champ caché pour l'anti-bot
+        honeypot: ""
     });
     const [emailSent, setEmailSent] = useState(false);
     const [error, setError] = useState("");
@@ -75,8 +74,6 @@ const ContactForm = ({ language }) => {
     };
 
     return (
-        <>
-            {/* <ContactFormHelmet /> */}
             <div className="contact">
                 <h2>{language === 'fr' ? 'Contact' : 'Contact'}</h2>
                 <form className="contact-form" onSubmit={handleSubmit}>
@@ -132,7 +129,6 @@ const ContactForm = ({ language }) => {
                     {emailSent && <p style={{ color: "green" }}>{language === 'fr' ? 'Email envoyé avec succès !' : 'Email sent successfully!'}</p>}
                 </form>
             </div>
-        </>
     );
 };
 

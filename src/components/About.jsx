@@ -1,14 +1,11 @@
 import React from "react";
 import '../styles/about.scss';
-// import { AboutHelmet } from "./StructuredDataSnippets";
 
 /* Images import */
 import portrait from '../images/auto-portrait.webp';
 
 export function About({ language }) {
   return (
-    <>
-      {/* <AboutHelmet /> */}
       <section className="about">
         <img src={portrait} alt={language === 'fr' ? 'Portrait de moi'
           : 'My portrait'} className="profile-pic" />
@@ -41,6 +38,5 @@ export function About({ language }) {
           </p>
         </div>
       </section>
-    </>
   );
 }

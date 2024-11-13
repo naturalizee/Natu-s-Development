@@ -9,17 +9,17 @@ const particlesConfigLight = {
         limit: 100,
       },
       color: {
-        value: "#a89fc6", // Particules blanches
+        value: "#a89fc6",
       },
       shape: {
         type: "circle",
         stroke: {
           width: 0,
-          color: "#a89fc6", // Pas de contour
+          color: "#a89fc6",
         },
       },
       opacity: {
-        value: 0.4, // Augmentation de l'opacité pour plus de visibilité
+        value: 0.4,
         random: false,
         anim: {
           enable: false,
@@ -29,7 +29,7 @@ const particlesConfigLight = {
         },
       },
       size: {
-        value: 5, // Taille des particules augmentée pour plus de visibilité
+        value: 5,
         random: true,
         anim: {
           enable: false,
@@ -41,9 +41,9 @@ const particlesConfigLight = {
       line_linked: {
         enable: true,
         distance: 200,
-        color: "#F2A08B", // Lignes oranges pour un bon contraste
-        opacity: 0.8, // Augmentation de l'opacité des lignes
-        width: 1.5, // Lignes légèrement plus épaisses pour plus de visibilité
+        color: "#F2A08B",
+        opacity: 0.8,
+        width: 1.5,
       },
       move: {
         enable: true,

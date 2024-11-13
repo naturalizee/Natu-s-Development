@@ -1,11 +1,8 @@
 import React from "react";
-// import { PrivacyDataProtectionHelmet } from "./StructuredDataSnippets";
 import "../styles/PrivacyDataProtection.scss"
 
 export function PrivacyDataProtection({ language }) {
     return (
-        <>
-            {/* <PrivacyDataProtectionHelmet /> */}
             <section className="PrivacyDataProtection">
                 <h2>
                     {language === "fr" ? "1. Nature des données collectées" : "1. Types of Data Collected"}
@@ -108,6 +105,5 @@ export function PrivacyDataProtection({ language }) {
                         : "This privacy policy may be modified or supplemented at any time to comply with legislative or regulatory changes. We therefore invite users to consult it regularly."}
                 </p>
             </section>
-        </>
     );
 }

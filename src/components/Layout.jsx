@@ -11,7 +11,6 @@ export function Header({ toggleTheme, theme, language, toggleLanguage }) {
         setIsMenuOpen(!isMenuOpen);
     };
 
-    // Ferme le menu lorsque l'utilisateur redimensionne la fenêtre au-delà de 768px
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth > 768 && isMenuOpen) {
@@ -52,7 +51,6 @@ export function Header({ toggleTheme, theme, language, toggleLanguage }) {
 
 
 export function Footer({ language }) {
-    // États pour contrôler l'affichage des modales
     const [showLegalNotice, setShowLegalNotice] = useState(false);
     const [showPrivacyPolicy, setShowPrivacyPolicy] = useState(false);
 

@@ -9,17 +9,17 @@ const particlesConfigDark = {
         limit: 100,
       },
       color: {
-        value: "#c1b5d0", // Particules violet doux pour correspondre au thème sombre
+        value: "#c1b5d0",
       },
       shape: {
         type: "circle",
         stroke: {
           width: 0,
-          color: "#c1b5d0", // Pas de contour
+          color: "#c1b5d0",
         },
       },
       opacity: {
-        value: 0.4, // Opacité ajustée pour la visibilité
+        value: 0.4,
         random: false,
         anim: {
           enable: false,
@@ -41,7 +41,7 @@ const particlesConfigDark = {
       line_linked: {
         enable: true,
         distance: 200,
-        color: "#8e453e", // Lignes d'accent rouge-brun pour bien contraster
+        color: "#8e453e",
         opacity: 0.8,
         width: 1.5,
       },
@@ -101,7 +101,7 @@ const particlesConfigDark = {
     },
     retina_detect: true,
     background: {
-      color: "#1b1b2f", // Fond sombre pour le thème dark
+      color: "#1b1b2f",
     },
   };
   

@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Slider from 'react-slick';
-// import { ModaleProjectsHelmet } from './StructuredDataSnippets';
 import '../styles/modaleProjects.scss';
 import '../styles/projects.scss';
 
-// Composants flèches personnalisées
 const NextArrow = ({ onClick }) => {
     return (
         <div className="nextArrow" onClick={onClick}>
@@ -24,7 +22,6 @@ const PrevArrow = ({ onClick }) => {
 const ModaleProjects = ({ isOpen, project, onClose, language }) => {
     const [selectedImage, setSelectedImage] = useState(null);
 
-    // Fermer l'image agrandie en appuyant sur la touche Échap
     useEffect(() => {
         const handleKeyDown = (e) => {
             if (e.key === 'Escape') {
@@ -59,8 +56,6 @@ const ModaleProjects = ({ isOpen, project, onClose, language }) => {
     };
 
     return (
-        <>
-            {/* <ModaleProjectsHelmet /> */}
             <div className="modale-overlay" onClick={onClose}>
                 <div className="modale-content" onClick={(e) => e.stopPropagation()}>
                     <button aria-label="close" className="close-button" onClick={onClose}>X</button>
@@ -97,7 +92,6 @@ const ModaleProjects = ({ isOpen, project, onClose, language }) => {
                     </div>
                 )}
             </div>
-        </>
     );
 };
 

@@ -1,10 +1,7 @@
 import React from "react";
-// import { LegalNoticeHelmet } from "./StructuredDataSnippets";
 
 export function LegalNotice({ language }) {
     return (
-        <>
-            {/* <LegalNoticeHelmet /> */}
             <section className="LegalNotice">
                 <h2>
                     {language === "fr" ? "1. Présentation du site" : "1. Website Presentation"}
@@ -90,6 +87,5 @@ export function LegalNotice({ language }) {
                         : "The information collected via the Site's contact form (name or business name, email address, message) is necessary to respond to user inquiries. This data is transmitted and stored via the EmailJS service and is in no way sold to third parties or used for commercial purposes without the explicit consent of the users."}
                 </p>
             </section>
-        </>
     );
 }

@@ -1,12 +1,11 @@
 import React from "react";
-// import { SkillsHelmet } from "./StructuredDataSnippets";
 import '../styles/skills.scss';
 
-// Utilisation de require.context pour charger tous les fichiers d'images de manière dynamique
+// Loading SVG, PNG, JPG, JPEG, and WebP Files
 const icons = require.context('../images/skills', false, /\.(svg|png|jpe?g|webp)$/);
 
 export function Skills({ language }) {
-    // Mapping entre chaque compétence et son icône SVG
+    //Mapping skills with their icons
     const skills = [
         { name: "HTML", icon: icons("./HTML5.svg") },
         { name: "CSS", icon: icons("./CSS3.svg") },
@@ -26,8 +25,6 @@ export function Skills({ language }) {
     ];
 
     return (
-        <>
-            {/* < SkillsHelmet /> */}
             <section className="skills">
                 <h2>{language === 'fr' ? 'Compétences' : 'Skills'}</h2>
                 <ul>
@@ -39,6 +36,5 @@ export function Skills({ language }) {
                     ))}
                 </ul>
             </section>
-        </>
     );
 }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-/* CSS styles generals */
+/* CSS generals styles */
 import './styles/general.scss';
 import './styles/portfolio.scss';
 import './styles/Particles.scss';

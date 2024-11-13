@@ -4,7 +4,7 @@ import "../styles/contactForm.scss"
 
 export const PDFViewer = ({ language }) => {
   const handleDownload = () => {
-    window.open("/assets/CV_alizee_dereppe_developpeuse_web.pdf", "_blank"); // Ouvre le fichier dans un nouvel onglet
+    window.open("/assets/CV_alizee_dereppe_developpeuse_web.pdf", "_blank");
   };
 
   return (
