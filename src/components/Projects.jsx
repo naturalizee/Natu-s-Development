@@ -73,7 +73,6 @@ export function Projects({ language }) {
     };
 
     const closeModale = () => {
-        console.log("Modale fermée");
         setIsModaleOpen(false);
         setCurrentProject(null);
     };
