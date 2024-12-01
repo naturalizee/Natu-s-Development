@@ -16,25 +16,24 @@ export function Skills({ language }) {
         { name: "Express", icon: icons("./Express.svg") },
         { name: "MongoDB", icon: icons("./MongoDB.svg") },
         { name: "Mongoose", icon: icons("./Mongoose.js.svg") },
+        { name: "AngularJs", icon: icons("./AngularJS.svg") },
         { name: "Figma", icon: icons("./Figma.svg") },
         { name: "Git", icon: icons("./Git.svg") },
         { name: "GitHub", icon: icons("./GitHub.svg") },
         { name: "Canva", icon: icons("./Canva.svg") },
-        { name: language === 'fr' ? "Français" : "French", icon: icons("./french.webp") },
-        { name: language === 'fr' ? "Anglais" : "English", icon: icons("./english.png") },
     ];
 
     return (
-            <section className="skills">
-                <h2>{language === 'fr' ? 'Compétences' : 'Skills'}</h2>
-                <ul>
-                    {skills.map((skill, index) => (
-                        <li key={index}>
-                            <img src={skill.icon} alt={`${skill.name} icon`} className="skill-icon" />
-                            {skill.name}
-                        </li>
-                    ))}
-                </ul>
-            </section>
+        <section className="skills">
+            <h2>{language === 'fr' ? 'Compétences' : 'Skills'}</h2>
+            <ul>
+                {skills.map((skill, index) => (
+                    <li key={index}>
+                        <img src={skill.icon} alt={`${skill.name} icon`} className="skill-icon" />
+                        {skill.name}
+                    </li>
+                ))}
+            </ul>
+        </section>
     );
 }
